@@ -20,8 +20,8 @@
     </binding>
    </key>
 
-   <key n="101">
-    <name>e</name>
+   <key n="69">
+    <name>E</name>
     <desc>Wings</desc>
     <binding>
      <command>nasal</command>

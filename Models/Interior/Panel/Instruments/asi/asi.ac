@@ -6,8 +6,8 @@ OBJECT world
 kids 4
 OBJECT poly
 name "face"
-data 8
-face.001
+data 4
+face
 texture "ASI.png"
 texrep 1 1
 crease 45.000000
@@ -129,8 +129,8 @@ refs 3
 kids 0
 OBJECT poly
 name "fond"
-data 8
-fond.001
+data 4
+fond
 texture "ASI.png"
 texrep 1 1
 crease 61.000000
@@ -1224,8 +1224,8 @@ refs 4
 kids 0
 OBJECT poly
 name "vitre"
-data 9
-vitre.001
+data 5
+vitre
 crease 30.000000
 numvert 271
 0.00323 0 0

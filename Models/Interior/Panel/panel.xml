@@ -89,5 +89,18 @@
     </offsets>
   </model>
 
+  <!-- vsi -->
+  <model>
+    <path>Aircraft/F6F-Hellcat/Models/Interior/Panel/Instruments/vsi/vsi.xml</path>
+    <offsets>
+      <x-m>  0.056 </x-m>
+      <y-m>  0.121 </y-m>
+      <z-m> -0.157 </z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg>   0 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
 </PropertyList>
 

@@ -22,7 +22,9 @@
     <object-name>ailetteD1</object-name>
     <object-name>ailetteD2</object-name>
     <object-name>moteur</object-name>
-    <object-name>ailes</object-name>
+    <object-name>baseailes</object-name>
+    <object-name>aileG</object-name>
+    <object-name>aileD</object-name>
     <object-name>aileronG</object-name>
     <object-name>voletG1</object-name>
     <object-name>voletG2</object-name>
@@ -47,7 +49,10 @@
     <object-name>tourvitres</object-name>
     <object-name>tourverriere</object-name>
     <object-name>trous</object-name>
-    <object-name>guns</object-name>
+    <object-name>trouaileG</object-name>
+    <object-name>trouaileD</object-name>
+    <object-name>gunsG</object-name>
+    <object-name>gunsD</object-name>
 
     <!-- draw this at last (order critical!) -->
     <object-name>vitres</object-name>
@@ -81,7 +86,9 @@
     <object-name>ailetteD1</object-name>
     <object-name>ailetteD2</object-name>
     <object-name>moteur</object-name>
-    <object-name>ailes</object-name>
+    <object-name>baseailes</object-name>
+    <object-name>aileG</object-name>
+    <object-name>aileD</object-name>
     <object-name>aileronG</object-name>
     <object-name>voletG1</object-name>
     <object-name>voletG2</object-name>
@@ -106,8 +113,10 @@
     <object-name>tourvitres</object-name>
     <object-name>tourverriere</object-name>
     <object-name>trous</object-name>
-    <object-name>guns</object-name>
-
+    <object-name>trouaileG</object-name>
+    <object-name>trouaileD</object-name>
+    <object-name>gunsG</object-name>
+    <object-name>gunsD</object-name>
 
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
@@ -295,6 +304,55 @@
       <x> -1 </x>
       <y>  0 </y>
       <z>  0 </z>
+    </axis>
+  </animation>
+
+  <!-- Pliage des ailes -->
+  <animation>
+    <name>AileGauche</name>
+    <object-name>aileG</object-name>
+    <object-name>voletG1</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>trouaileG</object-name>
+    <object-name>gunsG</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>AileGauche</object-name>
+    <property>instrumentation/doors/wings/position-norm</property>
+    <factor>110</factor>
+    <axis>
+      <x1-m> -2.435 </x1-m>
+      <y1-m> -1.899 </y1-m>
+      <z1-m> -0.366 </z1-m>
+      <x2-m> -2.287 </x2-m>
+      <y2-m> -2.032 </y2-m>
+      <z2-m> -0.140 </z2-m>
+    </axis>
+  </animation>
+
+  <animation>
+    <name>AileDroite</name>
+    <object-name>aileD</object-name>
+    <object-name>voletD1</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>trouaileD</object-name>
+    <object-name>gunsD</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>AileDroite</object-name>
+    <property>instrumentation/doors/wings/position-norm</property>
+    <factor>-110</factor>
+    <axis>
+      <x1-m> -2.435 </x1-m>
+      <y1-m>  1.899 </y1-m>
+      <z1-m> -0.366 </z1-m>
+      <x2-m> -2.287 </x2-m>
+      <y2-m>  2.032 </y2-m>
+      <z2-m> -0.140 </z2-m>
     </axis>
   </animation>
 

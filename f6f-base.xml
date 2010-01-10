@@ -45,11 +45,15 @@
     <help>
       <title>GRUMANN TBM f6f</title>
       <key>
-        <name>D</name>
-        <desc>Open/Close bombs bay</desc>
+        <name>d</name>
+        <desc>Open/Close canpy</desc>
       </key>
       <key>
-        <name>e (temporary)</name>
+        <name>e</name>
+        <desc>Guns fire</desc>
+      </key>
+      <key>
+        <name>E</name>
         <desc>Open/Close wings</desc>
       </key>
     </help>

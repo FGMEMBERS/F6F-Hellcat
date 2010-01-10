@@ -1160,9 +1160,9 @@ refs 4
 117 0.0691127181053 0.948065400124
 kids 0
 OBJECT poly
-name "face.001"
-data 8
-face.001
+name "face"
+data 4
+face
 texture "turn.png"
 texrep 1 1
 crease 30.000000
@@ -1464,9 +1464,9 @@ refs 3
 4 0.284678459167 0.419302165508
 kids 0
 OBJECT poly
-name "fond.001"
-data 8
-fond.001
+name "fond"
+data 4
+fond
 texture "turn.png"
 texrep 1 1
 crease 30.000000
@@ -2249,9 +2249,9 @@ refs 4
 47 0.514953374863 0.330638080835
 kids 0
 OBJECT poly
-name "vitre.001"
-data 9
-vitre.001
+name "vitre"
+data 5
+vitre
 crease 30.000000
 numvert 268
 -0.001785 0 0
