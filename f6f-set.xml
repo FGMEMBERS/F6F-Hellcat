@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- <PropertyList include="f6f-jsbsim-cnf.xml"> -->
+<PropertyList include="f6f-yasim-cnf.xml">
+
+  <sim>
+    <description>GRUMANN F6F Hellcat </description>
+    <author>Emmanuel BARANGER (3D/FDM)</author>
+  </sim>
+
+</PropertyList>
+

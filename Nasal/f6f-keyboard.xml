@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+   <key n="68">
+    <name>D</name>
+    <desc>Bomber bay</desc>
+    <binding>
+     <command>nasal</command>
+     <script>f6f.doorsystem.passengerexport();</script>
+    </binding>
+   </key>
+
+   <key n="100">
+    <name>d</name>
+    <desc>Crew door</desc>
+    <binding>
+     <command>nasal</command>
+     <script>f6f.doorsystem.crewexport();</script>
+    </binding>
+   </key>
+
+   <key n="101">
+    <name>e</name>
+    <desc>Wings</desc>
+    <binding>
+     <command>nasal</command>
+     <script>f6f.doorsystem.wingsexport();</script>
+    </binding>
+   </key>
+
+   <key n="101">
+     <name>e</name>
+     <desc>Guns</desc>
+     <binding>
+       <command>nasal</command>
+       <script>guns.fire_MG()</script>
+     </binding>
+     <mod-up>
+       <binding>
+         <command>nasal</command>
+         <script>guns.stop_MG()</script>
+       </binding>
+     </mod-up>
+   </key>
+
+</PropertyList>
+
