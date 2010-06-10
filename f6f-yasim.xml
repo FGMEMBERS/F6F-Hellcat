@@ -152,10 +152,22 @@
         <control-output control="EXTEND" prop="/gear/gear[2]/position-norm"/>
   </gear>
 
+  <tank x="1.4" y="2.7" z="-0.4" capacity="570"/>
   <tank x="1" y="0" z="-0.355" capacity="884"/>
-  <tank x="1.4" y="2.7" z="-0.4" capacity="559"/>
   <tank x="1.4" y="-2.7" z="-0.4" capacity="570"/>
 
+  <!-- Crosse d'appontage -->
+  <hook x="-6.054" y="0" z="-0.769" length="1.169" down-angle="40" up-angle="0">
+        <control-input axis="/controls/gear/tailhook" control="HEXTEND"/>
+        <control-speed control="HEXTEND" transition-time="4"/>
+  </hook>
+
+  <!-- Launch-bar --> 
+  <launchbar x="7.533" y="0" z="-2.30"  length="0.6">
+             <control-input axis="/controls/gear/launchbar" control="LEXTEND"/>
+             <control-speed control="LEXTEND" transition-time="1"/>
+  </launchbar>
+    
   <!-- CG theorique x=1.302 y=0 z=-0.293 -->
   <ballast x="0" y="0.0" z="-2" mass="1000"/>
 

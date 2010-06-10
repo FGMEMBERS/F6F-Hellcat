@@ -39,6 +39,9 @@
         <int type="int">0</int>
         <int type="int">0</int>
         <int type="int">0</int>
+        <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
+        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>
+        <float n="2" alias="/instrumentation/doors/wings/position-norm"/>
       </generic>
     </multiplay>
 
@@ -56,11 +59,19 @@
         <name>E</name>
         <desc>Open/Close wings</desc>
       </key>
+      <key>
+        <name>o/O</name>
+        <desc>Hook up/down</desc>
+      </key>
     </help>
 
     <menubar include="Dialogs/f6f-menu.xml"/>
 
   </sim>
+
+  <surface-positions>
+    <wing-fold-pos-norm alias="/instrumentation/doors/wings/position-norm" />
+  </surface-positions>
 
   <engines>
     <engine n="0">
@@ -88,10 +99,12 @@
 
   <nasal>
     <f6f>
-      <file>Aircraft/F6F-Hellcat/Nasal/doors.nas</file>
       <file>Aircraft/F6F-Hellcat/Nasal/liveries.nas</file>
       <file>Aircraft/F6F-Hellcat/Nasal/light.nas</file>
     </f6f>
+    <doors>
+      <file>Aircraft/F6F-Hellcat/Nasal/doors.nas</file>
+    </doors>
     <guns>
       <file>Aircraft/F6F-Hellcat/Nasal/weapons.nas</file>
       <file>Aircraft/F6F-Hellcat/Nasal/revi.nas</file>

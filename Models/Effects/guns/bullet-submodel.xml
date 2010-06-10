@@ -5,7 +5,7 @@
 
   <submodel>
     <name>bullet splash</name>
-    <model>Aircraft/F6F-Hellcat/Models/Effects/flack.xml</model>
+    <model>Aircraft/F6F-Hellcat/Models/Effects/guns/flack.xml</model>
     <speed>0</speed>
     <repeat>false</repeat>
     <delay>0</delay>

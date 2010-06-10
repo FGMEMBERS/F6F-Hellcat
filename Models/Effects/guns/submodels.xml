@@ -5,7 +5,7 @@
   <!-- Gauche extérieur -->
   <submodel>
     <name>left-up-tracer</name>
-    <model>Aircraft/F6F-Hellcat/Models/Effects/apibullet-tracer.xml</model>
+    <model>Aircraft/F6F-Hellcat/Models/Effects/guns/apibullet-tracer.xml</model>
     <trigger>controls/armament/trigger</trigger>
     <speed>2460.0</speed>
     <repeat>true</repeat>
@@ -25,13 +25,13 @@
     <collision-report>sim/ai/aircraft/collision/gun</collision-report>
     <impact>true</impact>
     <impact-report>sim/ai/aircraft/impact/bullet</impact-report>
-    <submodel-path>Aircraft/F6F-Hellcat/Models/Effects/bullet-submodel.xml</submodel-path>
+    <submodel-path>Aircraft/F6F-Hellcat/Models/Effects/guns/bullet-submodel.xml</submodel-path>
   </submodel>
 
   <!-- Gauche centre -->
   <submodel>
     <name>right-up-tracer</name>
-    <model>Aircraft/F6F-Hellcat/Models/Effects/apibullet-tracer.xml</model>
+    <model>Aircraft/F6F-Hellcat/Models/Effects/guns/apibullet-tracer.xml</model>
     <trigger>controls/armament/trigger</trigger>
     <speed>2460.0</speed>
     <repeat>true</repeat>
@@ -51,13 +51,13 @@
     <collision-report>sim/ai/aircraft/collision/gun</collision-report>
     <impact>true</impact>
     <impact-report>sim/ai/aircraft/impact/bullet</impact-report>
-    <submodel-path>Aircraft/F6F-Hellcat/Models/Effects/bullet-submodel.xml</submodel-path>
+    <submodel-path>Aircraft/F6F-Hellcat/Models/Effects/guns/bullet-submodel.xml</submodel-path>
   </submodel>
 
   <!-- Gauche interieur -->
   <submodel>
     <name>right-up-tracer</name>
-    <model>Aircraft/F6F-Hellcat/Models/Effects/apibullet-tracer.xml</model>
+    <model>Aircraft/F6F-Hellcat/Models/Effects/guns/apibullet-tracer.xml</model>
     <trigger>controls/armament/trigger</trigger>
     <speed>2460.0</speed>
     <repeat>true</repeat>
@@ -77,13 +77,13 @@
     <collision-report>sim/ai/aircraft/collision/gun</collision-report>
     <impact>true</impact>
     <impact-report>sim/ai/aircraft/impact/bullet</impact-report>
-    <submodel-path>Aircraft/F6F-Hellcat/Models/Effects/bullet-submodel.xml</submodel-path>
+    <submodel-path>Aircraft/F6F-Hellcat/Models/Effects/guns/bullet-submodel.xml</submodel-path>
   </submodel>
 
   <!-- Droite interieur -->
   <submodel>
     <name>right-up-tracer</name>
-    <model>Aircraft/F6F-Hellcat/Models/Effects/apibullet-tracer.xml</model>
+    <model>Aircraft/F6F-Hellcat/Models/Effects/guns/apibullet-tracer.xml</model>
     <trigger>controls/armament/trigger</trigger>
     <speed>2460.0</speed>
     <repeat>true</repeat>
@@ -103,13 +103,13 @@
     <collision-report>sim/ai/aircraft/collision/gun</collision-report>
     <impact>true</impact>
     <impact-report>sim/ai/aircraft/impact/bullet</impact-report>
-    <submodel-path>Aircraft/F6F-Hellcat/Models/Effects/bullet-submodel.xml</submodel-path>
+    <submodel-path>Aircraft/F6F-Hellcat/Models/Effects/guns/bullet-submodel.xml</submodel-path>
   </submodel>
 
   <!-- Droite centre -->
   <submodel>
     <name>right-up-tracer</name>
-    <model>Aircraft/F6F-Hellcat/Models/Effects/apibullet-tracer.xml</model>
+    <model>Aircraft/F6F-Hellcat/Models/Effects/guns/apibullet-tracer.xml</model>
     <trigger>controls/armament/trigger</trigger>
     <speed>2460.0</speed>
     <repeat>true</repeat>
@@ -129,13 +129,13 @@
     <collision-report>sim/ai/aircraft/collision/gun</collision-report>
     <impact>true</impact>
     <impact-report>sim/ai/aircraft/impact/bullet</impact-report>
-    <submodel-path>Aircraft/F6F-Hellcat/Models/Effects/bullet-submodel.xml</submodel-path>
+    <submodel-path>Aircraft/F6F-Hellcat/Models/Effects/guns/bullet-submodel.xml</submodel-path>
   </submodel>
 
   <!-- Droite extérieur -->
   <submodel>
     <name>left-up-tracer</name>
-    <model>Aircraft/F6F-Hellcat/Models/Effects/apibullet-tracer.xml</model>
+    <model>Aircraft/F6F-Hellcat/Models/Effects/guns/apibullet-tracer.xml</model>
     <trigger>controls/armament/trigger</trigger>
     <speed>2460.0</speed>
     <repeat>true</repeat>
@@ -155,7 +155,8 @@
     <collision-report>sim/ai/aircraft/collision/gun</collision-report>
     <impact>true</impact>
     <impact-report>sim/ai/aircraft/impact/bullet</impact-report>
-    <submodel-path>Aircraft/F6F-Hellcat/Models/Effects/bullet-submodel.xml</submodel-path>
+    <submodel-path>Aircraft/F6F-Hellcat/Models/Effects/guns/bullet-submodel.xml</submodel-path>
   </submodel>
 
 </PropertyList>
+

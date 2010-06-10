@@ -1,6 +1,12 @@
 default
 
-These liveries were made by : Laurent HAYVEL 2008
+These liveries were made by : BARANGER Emmanuel 2010
+
+Thanks to him.
+
+VF-27
+
+These liveries were made by : Starreja 2010
 
 Thanks to him.
 
