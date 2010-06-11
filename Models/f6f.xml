@@ -184,6 +184,23 @@
     <object-name>propdisc</object-name>
   </animation>
 
+  <!-- Une ombre pour OSG -->
+  <model>
+    <name>shadowOSG</name>
+    <path>Aircraft/F6F-Hellcat/Models/shadow.xml</path>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>shadowOSG</object-name>
+    <condition>
+      <equals>
+        <property>sim[0]/rendering/shadows-ai</property>
+        <value>true</value>
+      </equals>
+    </condition>
+  </animation>
+
   <!-- Effets de tir -->
   <!-- Gauche extérieur -->
   <model>
@@ -192,9 +209,9 @@
       <x-m> -2.791 </x-m>
       <y-m> -2.731 </y-m>
       <z-m> -0.180 </z-m>
-      <roll-deg>    0.000 </roll-deg>
-      <pitch-deg> 180.000 </pitch-deg>
-      <heading-deg> 0.000 </heading-deg>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg> 180 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -205,9 +222,9 @@
       <x-m> -2.863 </x-m>
       <y-m> -2.542 </y-m>
       <z-m> -0.204 </z-m>
-      <roll-deg>    0.000 </roll-deg>
-      <pitch-deg> 180.000 </pitch-deg>
-      <heading-deg> 0.000 </heading-deg>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg> 180 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -218,9 +235,9 @@
       <x-m> -3.029 </x-m>
       <y-m> -2.339 </y-m>
       <z-m> -0.232 </z-m>
-      <roll-deg>    0.000 </roll-deg>
-      <pitch-deg> 180.000 </pitch-deg>
-      <heading-deg> 0.000 </heading-deg>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg> 180 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -231,9 +248,9 @@
       <x-m> -3.029 </x-m>
       <y-m>  2.339 </y-m>
       <z-m> -0.232 </z-m>
-      <roll-deg>    0.000 </roll-deg>
-      <pitch-deg> 180.000 </pitch-deg>
-      <heading-deg> 0.000 </heading-deg>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg> 180 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -244,9 +261,9 @@
       <x-m> -2.863 </x-m>
       <y-m>  2.542 </y-m>
       <z-m> -0.204 </z-m>
-      <roll-deg>    0.000 </roll-deg>
-      <pitch-deg> 180.000 </pitch-deg>
-      <heading-deg> 0.000 </heading-deg>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg> 180 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -257,9 +274,9 @@
       <x-m> -2.791 </x-m>
       <y-m>  2.731 </y-m>
       <z-m> -0.180 </z-m>
-      <roll-deg>    0.000 </roll-deg>
-      <pitch-deg> 180.000 </pitch-deg>
-      <heading-deg> 0.000 </heading-deg>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg> 180 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
