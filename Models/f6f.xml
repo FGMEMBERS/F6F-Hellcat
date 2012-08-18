@@ -7,9 +7,23 @@
   <nasal>
     <load>
       var livery_update = aircraft.livery_update.new("Aircraft/F6F-Hellcat/Models/Liveries", 10);
+
+      var self = cmdarg();
+
+      var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
+      var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
+      
+      var crew_door = self.getNode("instrumentation/doors/crew/position-norm", 1);
+      var passenger_door = self.getNode("instrumentation/doors/passenger/position-norm", 1);
+    
+      crew_door.alias(float_0);
+      passenger_door.alias(float_1);
     </load>
+
     <unload>
       livery_update.stop();
+      crew_door.unalias();
+      passenger_door.unalias();
     </unload>
   </nasal>
 
@@ -21,7 +35,6 @@
     <object-name>ailetteG2</object-name>
     <object-name>ailetteD1</object-name>
     <object-name>ailetteD2</object-name>
-    <object-name>moteur</object-name>
     <object-name>baseailes</object-name>
     <object-name>aileG</object-name>
     <object-name>aileD</object-name>
@@ -35,25 +48,27 @@
     <object-name>profondeurG</object-name>
     <object-name>profondeurD</object-name>
     <object-name>direction</object-name>
-    <object-name>helice</object-name>
     <object-name>bol</object-name>
     <object-name>porteGA</object-name>
     <object-name>porteGB</object-name>
-    <object-name>axeG</object-name>
-    <object-name>roueG</object-name>
     <object-name>porteDA</object-name>
     <object-name>porteDB</object-name>
-    <object-name>axeD</object-name>
-    <object-name>roueD</object-name>
-    <object-name>roueA</object-name>
     <object-name>tourvitres</object-name>
     <object-name>tourverriere</object-name>
+
     <object-name>trous</object-name>
+    <object-name>moteur</object-name>
+    <object-name>hook</object-name>
+    <object-name>helice</object-name>
     <object-name>trouaileG</object-name>
     <object-name>trouaileD</object-name>
     <object-name>gunsG</object-name>
     <object-name>gunsD</object-name>
-    <object-name>hook</object-name>
+    <object-name>axeG</object-name>
+    <object-name>roueG</object-name>
+    <object-name>axeD</object-name>
+    <object-name>roueD</object-name>
+    <object-name>roueA</object-name>
 
     <!-- draw this at last (order critical!) -->
     <object-name>vitres</object-name>
@@ -70,7 +85,6 @@
     <object-name>ailetteG2</object-name>
     <object-name>ailetteD1</object-name>
     <object-name>ailetteD2</object-name>
-    <object-name>moteur</object-name>
     <object-name>baseailes</object-name>
     <object-name>aileG</object-name>
     <object-name>aileD</object-name>
@@ -84,42 +98,31 @@
     <object-name>profondeurG</object-name>
     <object-name>profondeurD</object-name>
     <object-name>direction</object-name>
-    <object-name>helice</object-name>
     <object-name>bol</object-name>
     <object-name>porteGA</object-name>
     <object-name>porteGB</object-name>
-    <object-name>axeG</object-name>
-    <object-name>roueG</object-name>
     <object-name>porteDA</object-name>
     <object-name>porteDB</object-name>
-    <object-name>axeD</object-name>
-    <object-name>roueD</object-name>
-    <object-name>roueA</object-name>
     <object-name>tourvitres</object-name>
     <object-name>tourverriere</object-name>
+
     <object-name>trous</object-name>
+    <object-name>moteur</object-name>
+    <object-name>hook</object-name>
+    <object-name>helice</object-name>
     <object-name>trouaileG</object-name>
     <object-name>trouaileD</object-name>
     <object-name>gunsG</object-name>
     <object-name>gunsD</object-name>
-    <object-name>hook</object-name>
+    <object-name>axeG</object-name>
+    <object-name>roueG</object-name>
+    <object-name>axeD</object-name>
+    <object-name>roueD</object-name>
+    <object-name>roueA</object-name>
 
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
     <texture>texture.png</texture>
-<!--
-    <diffuse>
-      <red-prop>diffuse/red</red-prop>
-      <green-prop>diffuse/green</green-prop>
-      <blue-prop>diffuse/blue</blue-prop>
-    </diffuse>
-
-    <ambient>
-      <red-prop>ambient/red</red-prop>
-      <green-prop>ambient/green</green-prop>
-      <blue-prop>ambient/blue</blue-prop>
-    </ambient>
--->
     <specular>
       <red-prop>specular/red</red-prop>
       <green-prop>specular/green</green-prop>
@@ -131,11 +134,6 @@
       <green-prop>emission/green</green-prop>
       <blue-prop>emission/blue</blue-prop>
     </emission>
-<!--
-    <shininess>
-      <shininess-prop>shininess</shininess-prop>
-    </shininess>
--->
   </animation>
 
   <effect>
@@ -186,20 +184,60 @@
 
   <!-- Une ombre pour OSG -->
   <model>
-    <name>shadowOSG</name>
     <path>Aircraft/F6F-Hellcat/Models/shadow.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -1.524 </z-m>
+    </offsets>
   </model>
 
-  <animation>
-    <type>select</type>
-    <object-name>shadowOSG</object-name>
-    <condition>
-      <equals>
-        <property>sim[0]/rendering/shadows-ai</property>
-        <value>true</value>
-      </equals>
-    </condition>
-  </animation>
+  <!-- Interior -->
+  <model>
+    <path>Aircraft/F6F-Hellcat/Models/Interior/interior.xml</path>
+  </model>
+
+  <!-- Cranking -->
+  <!-- Left -->
+  <model>
+    <path>Aircraft/F6F-Hellcat/Models/Effects/cranking/all-cranking.xml</path>
+    <offsets> 
+      <x-m> -3.340 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.105 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Effets sur le sol -->
+  <!-- Roue gauche -->
+  <model>
+    <path>Aircraft/F6F-Hellcat/Models/Effects/ground/ground0.xml</path>
+    <offsets>
+      <x-m> -2.713 </x-m>
+      <y-m> -1.738 </y-m>
+      <z-m> -2.026 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Roue droite -->
+  <model>
+    <path>Aircraft/F6F-Hellcat/Models/Effects/ground/ground1.xml</path>
+    <offsets>
+      <x-m> -2.713 </x-m>
+      <y-m>  1.738 </y-m>
+      <z-m> -2.026 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Roulette de queue -->
+  <model>
+    <path>Aircraft/F6F-Hellcat/Models/Effects/ground/ground2.xml</path>   
+    <offsets>
+      <x-m>  3.781 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -1.084 </z-m>
+    </offsets>
+  </model>
 
   <!-- Effets de tir -->
   <!-- Gauche extérieur -->
@@ -209,9 +247,7 @@
       <x-m> -2.791 </x-m>
       <y-m> -2.731 </y-m>
       <z-m> -0.180 </z-m>
-      <roll-deg>    0 </roll-deg>
       <pitch-deg> 180 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -222,9 +258,7 @@
       <x-m> -2.863 </x-m>
       <y-m> -2.542 </y-m>
       <z-m> -0.204 </z-m>
-      <roll-deg>    0 </roll-deg>
       <pitch-deg> 180 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -235,9 +269,7 @@
       <x-m> -3.029 </x-m>
       <y-m> -2.339 </y-m>
       <z-m> -0.232 </z-m>
-      <roll-deg>    0 </roll-deg>
       <pitch-deg> 180 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -248,9 +280,7 @@
       <x-m> -3.029 </x-m>
       <y-m>  2.339 </y-m>
       <z-m> -0.232 </z-m>
-      <roll-deg>    0 </roll-deg>
       <pitch-deg> 180 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -261,9 +291,7 @@
       <x-m> -2.863 </x-m>
       <y-m>  2.542 </y-m>
       <z-m> -0.204 </z-m>
-      <roll-deg>    0 </roll-deg>
       <pitch-deg> 180 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -274,19 +302,7 @@
       <x-m> -2.791 </x-m>
       <y-m>  2.731 </y-m>
       <z-m> -0.180 </z-m>
-      <roll-deg>    0 </roll-deg>
       <pitch-deg> 180 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
-    </offsets>
-  </model>
-
-  <!-- Interior -->
-  <model>
-    <path>Aircraft/F6F-Hellcat/Models/Interior/interior.xml</path>
-    <offsets>
-      <x-m> 0 </x-m>
-      <y-m> 0 </y-m>
-      <z-m> 0 </z-m>
     </offsets>
   </model>
 

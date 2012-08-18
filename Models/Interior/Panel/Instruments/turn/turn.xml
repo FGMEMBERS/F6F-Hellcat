@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?> 
 
 <PropertyList>
 
@@ -6,9 +6,9 @@
 
   <animation>
     <object-name>fond</object-name>
-    <object-name>face</object-name>
+    <object-name>face</object-name>   
     <object-name>needle</object-name>
-    <object-name>BallEnclosure</object-name>
+    <object-name>fond2</object-name>
     <object-name>ball</object-name>
 
     <object-name>vitre</object-name>
@@ -28,16 +28,14 @@
 
   <animation>
     <type>material</type>
-    <object-name>face</object-name>
+    <object-name>face</object-name>   
     <object-name>needle</object-name>
-    <object-name>BallEnclosure</object-name>
-    <object-name>ball</object-name>
+    <object-name>fond2</object-name>
     <emission>
-      <red>   1.0 </red>
-      <green> 0.2 </green>
-      <blue>  0.0 </blue>
-      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
-      <factor-prop>/sim/model//material/instruments/factor</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
     </emission>
   </animation>
 
@@ -45,17 +43,12 @@
     <type>rotate</type>
     <object-name>needle</object-name>
     <property>/instrumentation/turn-indicator/indicated-turn-rate</property>
-    <factor>20</factor>
+    <factor>20.0</factor>
     <axis>
       <x> -1 </x>
       <y>  0 </y>
       <z>  0 </z>
     </axis>
-    <center>
-      <x-m> 0 </x-m>
-      <y-m> 0 </y-m>
-      <z-m> 0 </z-m>
-    </center>
   </animation>
 
   <animation>
@@ -63,8 +56,8 @@
     <object-name>ball</object-name>
     <property>/instrumentation/slip-skid-ball/indicated-slip-skid</property>
     <factor>21</factor>
-    <min-deg>-13</min-deg>
-    <max-deg>13</max-deg>
+    <min-deg> -19 </min-deg>
+    <max-deg>  19 </max-deg>
     <center>
       <x-m> 0.00 </x-m>
       <y-m> 0.00 </y-m>

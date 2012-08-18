@@ -1,18 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<!--
-************************************************************************
-GRUMANN F6F Hellcat FDM YASim
-BARANGER Emmanuel                                                   2010
-************************************************************************
--->
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList include="f6f-base.xml">
 
   <sim>
+
     <description>GRUMANN F6F Hellcat (Yasim)</description>
     <flight-model>yasim</flight-model>
     <aero>f6f-yasim</aero>
+
   </sim>
 
 </PropertyList>
