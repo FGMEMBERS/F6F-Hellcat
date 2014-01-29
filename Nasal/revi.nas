@@ -3,7 +3,6 @@ toggle_revi = func {
   if(getprop("/controls/armament/revi/position-norm") > 0) {
       revi.close();
   } else {
-
       revi.open();
   }
 }

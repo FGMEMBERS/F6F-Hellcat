@@ -18,9 +18,6 @@
       <x-m> 0.056 </x-m>
       <y-m> 0.147 </y-m>
       <z-m> 0.004 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg>   0 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -31,9 +28,6 @@
       <x-m>  0.058 </x-m>
       <y-m> -0.245 </y-m>
       <z-m> -0.157 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg>   0 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -41,12 +35,9 @@
   <model>
     <path>Aircraft/F6F-Hellcat/Models/Interior/Panel/Instruments/asi/asi.xml</path>
     <offsets>
-      <x-m>  0.056 </x-m>
+      <x-m>  0.058 </x-m>
       <y-m> -0.121 </y-m>
       <z-m> -0.157 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg>   0 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -54,12 +45,9 @@
   <model>
     <path>Aircraft/F6F-Hellcat/Models/Interior/Panel/Instruments/turn/turn.xml</path>
     <offsets>
-      <x-m>  0.060 </x-m>
+      <x-m>  0.058 </x-m>
       <y-m> -0.002 </y-m>
       <z-m> -0.157 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg>   0 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -67,12 +55,9 @@
   <model>
     <path>Aircraft/F6F-Hellcat/Models/Interior/Panel/Instruments/rpm/rpm.xml</path>
     <offsets>
-      <x-m>  0.058 </x-m>
+      <x-m>  0.054 </x-m>
       <y-m>  0.295 </y-m>
       <z-m> -0.038 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg>   0 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -83,9 +68,6 @@
       <x-m>  0.057 </x-m>
       <y-m> -0.160 </y-m>
       <z-m>  0.020 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg>   0 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -93,14 +75,20 @@
   <model>
     <path>Aircraft/F6F-Hellcat/Models/Interior/Panel/Instruments/vsi/vsi.xml</path>
     <offsets>
-      <x-m>  0.056 </x-m>
+      <x-m>  0.058 </x-m>
       <y-m>  0.121 </y-m>
       <z-m> -0.157 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg>   0 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+  <!-- revi -->
+  <model>
+    <path>Aircraft/F6F-Hellcat/Models/Interior/Panel/Instruments/revi/revi.xml</path>
+    <offsets>
+      <x-m> 0.13 </x-m>
+      <y-m> 0.00 </y-m>
+      <z-m> 0.14 </z-m>
     </offsets>
   </model>
 
 </PropertyList>
-

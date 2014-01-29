@@ -4,6 +4,11 @@
 
   <path>f6f.ac</path>
 
+  <!-- MP sound call -->
+  <sound>
+    <path>Aircraft/F6F-Hellcat/Sounds/mp-sound.xml</path>
+  </sound>
+
   <nasal>
     <load>
       var livery_update = aircraft.livery_update.new("Aircraft/F6F-Hellcat/Models/Liveries", 10);
@@ -12,12 +17,15 @@
 
       var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
       var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
-      
-      var crew_door = self.getNode("instrumentation/doors/crew/position-norm", 1);
-      var passenger_door = self.getNode("instrumentation/doors/passenger/position-norm", 1);
-    
+      var float_2 = self.getNode("sim/multiplay/generic/float[4]", 1);
+
+      var crew_door = self.getNode("sim/model/door-positions/crew/position-norm", 1);
+      var passenger_door = self.getNode("sim/model/door-positions/passenger/position-norm", 1);
+      var wings_door = self.getNode("sim/model/door-positions/wings/position-norm", 1);
+
       crew_door.alias(float_0);
       passenger_door.alias(float_1);
+      wings_door.alias(float_2);
     </load>
 
     <unload>
@@ -53,21 +61,28 @@
     <object-name>porteGB</object-name>
     <object-name>porteDA</object-name>
     <object-name>porteDB</object-name>
+    <object-name>porteA</object-name>
     <object-name>tourvitres</object-name>
     <object-name>tourverriere</object-name>
+    <object-name>antennes</object-name>
 
     <object-name>trous</object-name>
-    <object-name>moteur</object-name>
+    <object-name>cables</object-name>
     <object-name>hook</object-name>
     <object-name>helice</object-name>
     <object-name>trouaileG</object-name>
     <object-name>trouaileD</object-name>
     <object-name>gunsG</object-name>
     <object-name>gunsD</object-name>
-    <object-name>axeG</object-name>
+    <object-name>axeGH</object-name>
+    <object-name>axeGB</object-name>
     <object-name>roueG</object-name>
-    <object-name>axeD</object-name>
+    <object-name>roueG2</object-name>
+    <object-name>axeDH</object-name>
+    <object-name>axeDG</object-name>
     <object-name>roueD</object-name>
+    <object-name>roueD2</object-name>
+    <object-name>axeA</object-name>
     <object-name>roueA</object-name>
 
     <!-- draw this at last (order critical!) -->
@@ -103,21 +118,28 @@
     <object-name>porteGB</object-name>
     <object-name>porteDA</object-name>
     <object-name>porteDB</object-name>
+    <object-name>porteA</object-name>
     <object-name>tourvitres</object-name>
     <object-name>tourverriere</object-name>
+    <object-name>antennes</object-name>
 
     <object-name>trous</object-name>
-    <object-name>moteur</object-name>
+    <object-name>cables</object-name>
     <object-name>hook</object-name>
     <object-name>helice</object-name>
     <object-name>trouaileG</object-name>
     <object-name>trouaileD</object-name>
     <object-name>gunsG</object-name>
     <object-name>gunsD</object-name>
-    <object-name>axeG</object-name>
+    <object-name>axeGH</object-name>
+    <object-name>axeGB</object-name>
     <object-name>roueG</object-name>
-    <object-name>axeD</object-name>
+    <object-name>roueG2</object-name>
+    <object-name>axeDH</object-name>
+    <object-name>axeDG</object-name>
     <object-name>roueD</object-name>
+    <object-name>roueD2</object-name>
+    <object-name>axeA</object-name>
     <object-name>roueA</object-name>
 
     <property-base>sim/model/livery</property-base>
@@ -128,16 +150,13 @@
       <green-prop>specular/green</green-prop>
       <blue-prop>specular/blue</blue-prop>
     </specular>
-
-    <emission>
-      <red-prop>emission/red</red-prop>
-      <green-prop>emission/green</green-prop>
-      <blue-prop>emission/blue</blue-prop>
-    </emission>
   </animation>
 
   <effect>
     <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
+    <condition>
+      <not><property>sim/rendering/rembrandt/enabled</property></not>
+    </condition>
     <object-name>fuselage</object-name>
     <object-name>capot</object-name>
     <object-name>ailetteG1</object-name>
@@ -162,6 +181,41 @@
     <object-name>porteGB</object-name>
     <object-name>porteDA</object-name>
     <object-name>porteDB</object-name>
+    <object-name>porteA</object-name>
+    <object-name>tourvitres</object-name>
+    <object-name>tourverriere</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Aircraft/Generic/Effects/model-combined-deferred</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>fuselage</object-name>
+    <object-name>capot</object-name>
+    <object-name>ailetteG1</object-name>
+    <object-name>ailetteG2</object-name>
+    <object-name>ailetteD1</object-name>
+    <object-name>ailetteD2</object-name>
+    <object-name>baseailes</object-name>
+    <object-name>aileG</object-name>
+    <object-name>aileD</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>voletG1</object-name>
+    <object-name>voletG2</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>voletD1</object-name>
+    <object-name>voletD2</object-name>
+    <object-name>ailes2</object-name>
+    <object-name>profondeurG</object-name>
+    <object-name>profondeurD</object-name>
+    <object-name>direction</object-name>
+    <object-name>bol</object-name>
+    <object-name>porteGA</object-name>
+    <object-name>porteGB</object-name>
+    <object-name>porteDA</object-name>
+    <object-name>porteDB</object-name>
+    <object-name>porteA</object-name>
     <object-name>tourvitres</object-name>
     <object-name>tourverriere</object-name>
   </effect>
@@ -170,17 +224,26 @@
     <type>shader</type>
     <shader>chrome</shader>
     <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <!--
+    <condition>
+      <not><property>sim/rendering/rembrandt/enabled</property></not>
+    </condition>
+    -->
     <object-name>vitres</object-name>
     <object-name>verriere</object-name>
   </animation>
 
-  <animation>
-    <type>noshadow</type>
+  <!--  REMBRANDT support for transparent objects-->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
     <object-name>vitres</object-name>
     <object-name>verriere</object-name>
     <object-name>propblur</object-name>
     <object-name>propdisc</object-name>
-  </animation>
+  </effect>
 
   <!-- Une ombre pour OSG -->
   <model>
@@ -195,6 +258,16 @@
   <!-- Interior -->
   <model>
     <path>Aircraft/F6F-Hellcat/Models/Interior/interior.xml</path>
+  </model>
+
+  <!-- Engine -->
+  <model>
+    <path>Aircraft/F6F-Hellcat/Models/Engines/engine.xml</path>
+    <offsets> 
+      <x-m> -4.13557 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m>  0.10518 </z-m>
+    </offsets>
   </model>
 
   <!-- Cranking -->
@@ -358,6 +431,12 @@
   <animation>
     <type>spin</type>
     <object-name>HeliceComplete</object-name>
+    <condition>
+      <greater-than>
+        <property>engines/engine[0]/rpm</property>
+        <value> 5 </value>
+      </greater-than>
+    </condition>
     <property>engines/engine[0]/rpm</property>
     <factor> 1 </factor>
     <center>
@@ -403,7 +482,7 @@
 
   <model>
     <name>WhiteLightLeft</name>
-    <path>Aircraft/F6F-Hellcat/Models/light/StrobeWhite.xml</path>
+    <path>Aircraft/F6F-Hellcat/Models/light/StrobeLight.xml</path>
     <offsets>
       <x-m> -2.016 </x-m>
       <y-m> -6.526 </y-m>
@@ -423,7 +502,7 @@
 
   <model>
     <name>WhiteLightRight</name>
-    <path>Aircraft/F6F-Hellcat/Models/light/StrobeWhite.xml</path>
+    <path>Aircraft/F6F-Hellcat/Models/light/StrobeLight.xml</path>
     <offsets>
       <x-m> -2.016 </x-m>
       <y-m>  6.526 </y-m>
@@ -446,7 +525,7 @@
   <animation>
     <type>rotate</type>
     <object-name>AileGauche</object-name>
-    <property>instrumentation/doors/wings/position-norm</property>
+    <property>sim/model/door-positions/wings/position-norm</property>
     <factor>110</factor>
     <axis>
       <x1-m> -2.435 </x1-m>
@@ -472,7 +551,7 @@
   <animation>
     <type>rotate</type>
     <object-name>AileDroite</object-name>
-    <property>instrumentation/doors/wings/position-norm</property>
+    <property>sim/model/door-positions/wings/position-norm</property>
     <factor>-110</factor>
     <axis>
       <x1-m> -2.435 </x1-m>
@@ -652,7 +731,7 @@
     <object-name>porteGB</object-name>
     <property>gear/gear[0]/position-norm</property>
     <interpolation>
-      <entry><ind> 0 </ind><dep> -97 </dep></entry>
+      <entry><ind> 0 </ind><dep> -98 </dep></entry>
       <entry><ind> 1 </ind><dep>   0 </dep></entry>
     </interpolation>
     <center>
@@ -712,7 +791,7 @@
     <object-name>porteDB</object-name>
     <property>gear/gear[0]/position-norm</property>
     <interpolation>
-      <entry><ind> 0 </ind><dep> -97 </dep></entry>
+      <entry><ind> 0 </ind><dep> -98 </dep></entry>
       <entry><ind> 1 </ind><dep>   0 </dep></entry>
     </interpolation>
     <center>
@@ -749,7 +828,8 @@
   <!-- Rentré des roues -->
   <animation>
     <name>TrainGauche</name>
-    <object-name>axeG</object-name>
+    <object-name>axeGH</object-name>
+    <object-name>axeGB</object-name>
     <object-name>roueG</object-name>
   </animation>
 
@@ -794,7 +874,8 @@
 
   <animation>
     <name>TrainDroit</name>
-    <object-name>axeD</object-name>
+    <object-name>axeDH</object-name>
+    <object-name>axeDB</object-name>
     <object-name>roueD</object-name>
   </animation>
 
@@ -838,17 +919,24 @@
   </animation>
 
   <animation>
-    <type>rotate</type>
+    <name>TrainArriere</name>
+    <object-name>porteA</object-name>
+    <object-name>axeA</object-name>
     <object-name>roueA</object-name>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>TrainArriere</object-name>
     <property>gear/gear[2]/position-norm</property>
     <interpolation>
-      <entry><ind> 0 </ind><dep> -50 </dep></entry>
+      <entry><ind> 0 </ind><dep> -45 </dep></entry>
       <entry><ind> 1 </ind><dep>   0 </dep></entry>
     </interpolation>
     <center>
-      <x-m>  3.362 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m> -0.579 </z-m>
+      <x-m>  3.22383 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.58885 </z-m>
     </center>
     <axis>
       <x> 0 </x>
@@ -857,38 +945,171 @@
     </axis>
   </animation>
 
+  <!-- Compression -->
+  <animation>
+    <name>CompressionGauche</name>
+    <object-name>axeGB</object-name>
+    <object-name>roueG</object-name>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>CompressionGauche</object-name>
+    <property>gear/gear[0]/compression-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep> 0.0 </dep></entry>
+      <entry><ind> 1 </ind><dep> 0.2 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0.077960 </x>
+      <y> 0.000000 </y>
+      <z> 0.442136 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <name>CompressionDroite</name>
+    <object-name>axeDB</object-name>
+    <object-name>roueD</object-name>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>CompressionDroite</object-name>
+    <property>gear/gear[1]/compression-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep> 0.0 </dep></entry>
+      <entry><ind> 1 </ind><dep> 0.2 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 0.077960 </x>
+      <y> 0.000000 </y>
+      <z> 0.442136 </z>
+    </axis>
+  </animation>
+
   <!-- Rotation des roues lors du roulage -->
   <animation>
-    <type>spin</type>
+    <type>select</type>
     <object-name>roueG</object-name>
+    <condition>
+      <less-than>
+        <property>gear/gear[0]/compression-norm</property>
+        <value>0.041</value>
+      </less-than>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>roueG2</object-name>
+    <condition>
+      <greater-than>
+        <property>gear/gear[0]/compression-norm</property>
+        <value>0.039</value>
+      </greater-than>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>texrotate</type>
+    <object-name>roueG2</object-name>
     <property>/gear/gear[0]/rollspeed-ms</property>
     <factor> 30 </factor>
+    <center>
+      <x> 0.19168750 </x>
+      <y> 0.06140625 </y>
+      <z> 0.00000000 </z>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y>  0 </y>
+      <z> -1 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>roueG2</object-name>
+    <property>/orientation/pitch-deg</property>
+    <condition>
+      <greater-than>
+        <property>gear/gear[0]/compression-norm</property>
+        <value>0.039</value>
+      </greater-than>
+    </condition>
+    <factor> -1 </factor>
     <center>
       <x-m> -2.713 </x-m>
       <y-m> -1.738 </y-m>
       <z-m> -1.632 </z-m>
     </center>
     <axis>
-      <x>  0 </x>
-      <y> -1 </y>
-      <z>  0 </z>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
   <animation>
-    <type>spin</type>
+    <type>select</type>
     <object-name>roueD</object-name>
+    <condition>
+      <less-than>
+        <property>gear/gear[1]/compression-norm</property>
+        <value>0.041</value>
+      </less-than>
+    </condition>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>roueD2</object-name>
+    <condition>
+      <greater-than>
+        <property>gear/gear[1]/compression-norm</property>
+        <value>0.039</value>
+      </greater-than>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>texrotate</type>
+    <object-name>roueD2</object-name>
     <property>/gear/gear[1]/rollspeed-ms</property>
     <factor> 30 </factor>
     <center>
-      <x-m> -2.713 </x-m>
-      <y-m>  1.738 </y-m>
-      <z-m> -1.632 </z-m>
+      <x> 0.19168750 </x>
+      <y> 0.06140625 </y>
+      <z> 0.00000000 </z>
     </center>
     <axis>
       <x>  0 </x>
-      <y> -1 </y>
-      <z>  0 </z>
+      <y>  0 </y>
+      <z> -1 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>roueD2</object-name>
+    <property>/orientation/pitch-deg</property>
+    <condition>
+      <greater-than>
+        <property>gear/gear[1]/compression-norm</property>
+        <value>0.039</value>
+      </greater-than>
+    </condition>
+    <factor> -1 </factor>
+    <center>
+      <x-m> -2.713 </x-m>
+      <y-m> -1.738 </y-m>
+      <z-m> -1.632 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -919,7 +1140,7 @@
   <animation>
     <type>translate</type>
     <object-name>Canopy</object-name>
-    <property>/instrumentation/doors/crew/position-norm</property>
+    <property>sim/model/door-positions/crew/position-norm</property>
     <factor> 0.64 </factor>
     <axis>
       <x> 1 </x>
@@ -931,9 +1152,30 @@
   <animation>
     <type>translate</type>
     <object-name>Canopy</object-name>
-    <property>/instrumentation/doors/crew/position-norm</property>
+    <property>sim/model/door-positions/crew/position-norm</property>
     <factor> -0.04 </factor>
-    <axis>
+    <axis>  <animation>
+        <name>CompressionGauche</name>
+        <object-name>axeGB</object-name>
+        <object-name>roueG</object-name>
+      </animation>
+      
+      <animation>
+        <type>translate</type>
+        <object-name>CompressionGauche</object-name>
+        <property>gear/gear[0]/compression-norm</property>
+        <interpolation>
+          <entry><ind> 0 </ind><dep> 0.0 </dep></entry>
+          <entry><ind> 1 </ind><dep> 0.2 </dep></entry>
+        </interpolation>
+        <axis>
+          <x> 0.077960 </x>
+          <y> 0.000000 </y>
+          <z> 0.442136 </z>
+        </axis>
+      </animation>
+      
+      
       <x> 0 </x>
       <y> 0 </y>
       <z> 1 </z>
@@ -1072,4 +1314,3 @@
   </animation>
 
 </PropertyList>
-

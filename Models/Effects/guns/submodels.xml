@@ -1,28 +1,69 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
+<!--
+  Standard armament on the F6F-3 consisted of six .50 in (12.7 mm) M2/AN 
+  Browning air-cooled machine guns with 400 rpg
+
+  There is one possible variation:
+
+  "While all F6F-5s were capable of carrying an armament mix of one 20 
+  mm (.79 in) M2 cannon in each of the inboard gun bays (220 rpg), along 
+  with two pairs of .50 in (12.7 mm) machine guns (each with 400 rpg), 
+  this configuration was only used on many later F6F-5N night 
+  fighters.[21] The F6F-5 was the most common variant with 7,870 being 
+  built."
+
+  Source: http://en.wikipedia.org/wiki/Grumman_F6F_Hellcat
+
+  Cartridge .50 BMG (12.7 x 99mm NATO)
+  Action  Short recoil-operated
+  Rate of fire 450-635 rounds/min (M2HB)
+  750-850 rounds/min (AN/M2)
+  1,200 rounds/min (AN/M3)
+  Muzzle velocity 2,910 ft/s (890 m/s) for M33 ball
+  Effective range 1,800 m (2,000 yd)[3]
+  Maximum range 2,000 m (2,200 yd)
+  Feed system Belt-fed (M2 or M9 links)
+
+  Standard armament on the F6F-3 consisted of six .50 in (12.7 mm) M2/AN Browning 
+  air-cooled machine guns with 400 rpg (rounds per gun)
+
+  Source: http://en.wikipedia.org/wiki/M2_Browning_machine_gun
+
+  647 gr (41.9 g) Speer 3,044 ft/s (928 m/s)  13,144 ft x lbf (17,821 J)
+  655 gr (42.4 g) ADI 3,029 ft/s (923 m/s)  13,350 ft x lbf (18,100 J)
+  700 gr (45 g) Barnes  2,978 ft/s (908 m/s)  13,971 ft x lbf (18,942 J)
+  750 gr (49 g) Hornady 2,820 ft/s (860 m/s)  13,241 ft-lbs (17,952 J)
+  [1]
+  800 gr (52 g) Barnes  2,895 ft/s (882 m/s)  14,8
+  Source: http://en.wikipedia.org/wiki/.50_BMG
+
+  59 grams = 0.130072735 pounds
+-->
 <PropertyList>
 
   <cannon>
-    <model>Models/Geometry/tracer.xml</model>
-    <speed>2755.9</speed>
-    <cd>0.193</cd>
-    <weight>0.286600941</weight>
-    <eda>0.00338158219</eda>
-    <!--<pitch-offset>0</pitch-offset>-->
-    <fuse-range>0</fuse-range>
-    <life>40</life>
+    <name>M2/AN Browning .50 BMG Round</name>
+    <model>Aircraft/F6F-Hellcat/Models/Effects/guns/apibullet-tracer.xml</model>
     <trigger>controls/armament/trigger</trigger>
-    <expiry>true</expiry>
+    <speed>2910</speed>
     <repeat>true</repeat>
-    <delay>0.41</delay>
-    <count>33</count>
+    <delay>0.152</delay> <!--doubling the delay/halving the rate to avoid killing FG framerate-->
+    <count>400</count>
+    <yaw-offset>0</yaw-offset>
+    <pitch-offset>0.1</pitch-offset>
+    <life>40</life>
     <wind>false</wind>
+    <weight>0.13007235</weight>
+    <cd>0.193</cd>
+    <eda>0.00571198</eda>
+    <fuse-range>0</fuse-range>
     <collision>true</collision>
+    <collision-report>sim/ai/aircraft/collision/gun</collision-report>
+    <expiry>true</expiry>
     <impact>true</impact>
     <impact-report>sim/ai/aircraft/impact/bullet</impact-report>
     <submodel-path>Aircraft/F6F-Hellcat/Models/Effects/guns/bullet-submodel.xml</submodel-path>
-    <impact-reports>sim/ai/aircraft/collision/cannon</impact-reports>
-    <pitch-offset>0.1</pitch-offset>
   </cannon>
 
   <submodel>
@@ -30,43 +71,26 @@
     <model alias="../../cannon/model"/>
     <trigger alias="../../cannon/trigger"/>
     <speed alias="../../cannon/speed"/>
-    <cd alias="../../cannon/cd"/>
-    <eda alias="../../cannon/eda"/>
-    <fuse-range alias="../../cannon/fuse-range"/>
-    <weight alias="../../cannon/weight"/>
-    <life alias="../../cannon/life"/>
     <repeat alias="../../cannon/repeat"/>
     <delay alias="../../cannon/delay"/>
     <count alias="../../cannon/count"/>
-    <wind alias="../../cannon/wind"/>
-    <expiry alias="../../cannon/expiry"/>
-    <collision alias="../../cannon/collision"/>
-    <impact alias="../../cannon/impact"/>
-    <submodel-path alias="../../cannon/submodel-path"/>
     <x-offset>  9.16 </x-offset> <!-- -2.791 m =  9.16 ft -->
     <y-offset>  8.96 </y-offset> <!-- -2.731 m =  8.96 ft -->
     <z-offset> -0.59 </z-offset> <!-- -0.180 m = -0.59 ft -->
-    <yaw-offset>0</yaw-offset>
+    <yaw-offset alias="../../cannon/yaw-offset"/>
     <pitch-offset alias="../../cannon/pitch-offset"/>
-  </submodel>
-
-  <submodel>
-    <name>Left exterior smoke</name>
-    <model>Aircraft/F6F-Hellcat/Models/Effects/guns/smoke.xml</model>
-    <trigger alias="../../cannon/trigger"/>
-    <speed>200</speed>
-    <repeat>true</repeat>
-    <delay>0.08</delay>
-    <count>160</count>
-    <x-offset>  9.16 </x-offset> <!-- -2.791 m =  9.16 ft -->
-    <y-offset>  8.96 </y-offset> <!-- -2.731 m =  8.96 ft -->
-    <z-offset> -0.59 </z-offset> <!-- -0.180 m = -0.59 ft -->
-    <yaw-offset>-60</yaw-offset>
-    <pitch-offset>-60</pitch-offset>
-    <eda>10</eda>
-    <wind>true</wind>
-    <buoyancy>33</buoyancy>
-    <life>5</life>
+    <life alias="../../cannon/life"/>
+    <wind alias="../../cannon/wind"/>
+    <weight alias="../../cannon/weight"/>
+    <cd alias="../../cannon/cd"/>
+    <eda alias="../../cannon/eda"/>
+    <fuse-range alias="../../cannon/fuse-range"/>
+    <collision alias="../../cannon/collision"/>
+    <collision-report alias="../../cannon/collision-report"/>
+    <expiry alias="../../cannon/expiry"/>
+    <impact alias="../../cannon/impact"/>
+    <impact-report alias="../../cannon/impact-report"/>
+    <submodel-path alias="../../cannon/submodel-path"/>
   </submodel>
 
   <submodel>
@@ -74,43 +98,26 @@
     <model alias="../../cannon/model"/>
     <trigger alias="../../cannon/trigger"/>
     <speed alias="../../cannon/speed"/>
-    <cd alias="../../cannon/cd"/>
-    <eda alias="../../cannon/eda"/>
-    <fuse-range alias="../../cannon/fuse-range"/>
-    <weight alias="../../cannon/weight"/>
-    <life alias="../../cannon/life"/>
     <repeat alias="../../cannon/repeat"/>
     <delay alias="../../cannon/delay"/>
     <count alias="../../cannon/count"/>
-    <wind alias="../../cannon/wind"/>
-    <expiry alias="../../cannon/expiry"/>
-    <collision alias="../../cannon/collision"/>
-    <impact alias="../../cannon/impact"/>
-    <submodel-path alias="../../cannon/submodel-path"/>
     <x-offset>  9.39 </x-offset> <!-- -2.863 m =  9.39 ft -->
     <y-offset>  8.34 </y-offset> <!-- -2.542 m =  8.34 ft -->
     <z-offset> -0.67 </z-offset> <!-- -0.204 m = -0.67 ft -->
-    <yaw-offset>0</yaw-offset>
+    <yaw-offset alias="../../cannon/yaw-offset"/>
     <pitch-offset alias="../../cannon/pitch-offset"/>
-  </submodel>
-
-  <submodel>
-    <name>Left center smoke</name>
-    <model>Aircraft/F6F-Hellcat/Models/Effects/guns/smoke.xml</model>
-    <trigger alias="../../cannon/trigger"/>
-    <speed>200</speed>
-    <repeat>true</repeat>
-    <delay>0.08</delay>
-    <count>160</count>
-    <x-offset>  9.39 </x-offset> <!-- -2.863 m =  9.39 ft -->
-    <y-offset>  8.34 </y-offset> <!-- -2.542 m =  8.34 ft -->
-    <z-offset> -0.67 </z-offset> <!-- -0.204 m = -0.67 ft -->
-    <yaw-offset>-60</yaw-offset>
-    <pitch-offset>-60</pitch-offset>
-    <eda>10</eda>
-    <wind>true</wind>
-    <buoyancy>33</buoyancy>
-    <life>5</life>
+    <life alias="../../cannon/life"/>
+    <wind alias="../../cannon/wind"/>
+    <weight alias="../../cannon/weight"/>
+    <cd alias="../../cannon/cd"/>
+    <eda alias="../../cannon/eda"/>
+    <fuse-range alias="../../cannon/fuse-range"/>
+    <collision alias="../../cannon/collision"/>
+    <collision-report alias="../../cannon/collision-report"/>
+    <expiry alias="../../cannon/expiry"/>
+    <impact alias="../../cannon/impact"/>
+    <impact-report alias="../../cannon/impact-report"/>
+    <submodel-path alias="../../cannon/submodel-path"/>
   </submodel>
 
   <submodel>
@@ -118,43 +125,26 @@
     <model alias="../../cannon/model"/>
     <trigger alias="../../cannon/trigger"/>
     <speed alias="../../cannon/speed"/>
-    <cd alias="../../cannon/cd"/>
-    <eda alias="../../cannon/eda"/>
-    <fuse-range alias="../../cannon/fuse-range"/>
-    <weight alias="../../cannon/weight"/>
-    <life alias="../../cannon/life"/>
     <repeat alias="../../cannon/repeat"/>
     <delay alias="../../cannon/delay"/>
     <count alias="../../cannon/count"/>
-    <wind alias="../../cannon/wind"/>
-    <expiry alias="../../cannon/expiry"/>
-    <collision alias="../../cannon/collision"/>
-    <impact alias="../../cannon/impact"/>
-    <submodel-path alias="../../cannon/submodel-path"/>
     <x-offset>  9.94 </x-offset> <!-- -3.029 m =  9.94 ft -->
     <y-offset>  7.67 </y-offset> <!-- -2.339 m =  7.67 ft -->
     <z-offset> -0.76 </z-offset> <!-- -0.232 m = -0.76 ft -->
-    <yaw-offset>0</yaw-offset>
+    <yaw-offset alias="../../cannon/yaw-offset"/>
     <pitch-offset alias="../../cannon/pitch-offset"/>
-  </submodel>
-
-  <submodel>
-    <name>Left interior smoke</name>
-    <model>Aircraft/F6F-Hellcat/Models/Effects/guns/smoke.xml</model>
-    <trigger alias="../../cannon/trigger"/>
-    <speed>200</speed>
-    <repeat>true</repeat>
-    <delay>0.08</delay>
-    <count>160</count>
-    <x-offset>  9.94 </x-offset> <!-- -3.029 m =  9.94 ft -->
-    <y-offset>  7.67 </y-offset> <!-- -2.339 m =  7.67 ft -->
-    <z-offset> -0.76 </z-offset> <!-- -0.232 m = -0.76 ft -->
-    <yaw-offset>-60</yaw-offset>
-    <pitch-offset>-60</pitch-offset>
-    <eda>10</eda>
-    <wind>true</wind>
-    <buoyancy>33</buoyancy>
-    <life>5</life>
+    <life alias="../../cannon/life"/>
+    <wind alias="../../cannon/wind"/>
+    <weight alias="../../cannon/weight"/>
+    <cd alias="../../cannon/cd"/>
+    <eda alias="../../cannon/eda"/>
+    <fuse-range alias="../../cannon/fuse-range"/>
+    <collision alias="../../cannon/collision"/>
+    <collision-report alias="../../cannon/collision-report"/>
+    <expiry alias="../../cannon/expiry"/>
+    <impact alias="../../cannon/impact"/>
+    <impact-report alias="../../cannon/impact-report"/>
+    <submodel-path alias="../../cannon/submodel-path"/>
   </submodel>
 
   <submodel>
@@ -162,43 +152,26 @@
     <model alias="../../cannon/model"/>
     <trigger alias="../../cannon/trigger"/>
     <speed alias="../../cannon/speed"/>
-    <cd alias="../../cannon/cd"/>
-    <eda alias="../../cannon/eda"/>
-    <fuse-range alias="../../cannon/fuse-range"/>
-    <weight alias="../../cannon/weight"/>
-    <life alias="../../cannon/life"/>
     <repeat alias="../../cannon/repeat"/>
     <delay alias="../../cannon/delay"/>
     <count alias="../../cannon/count"/>
-    <wind alias="../../cannon/wind"/>
-    <expiry alias="../../cannon/expiry"/>
-    <collision alias="../../cannon/collision"/>
-    <impact alias="../../cannon/impact"/>
-    <submodel-path alias="../../cannon/submodel-path"/>
     <x-offset>  9.94 </x-offset> <!-- -3.029 m =  9.94 ft -->
     <y-offset> -7.67 </y-offset> <!--  2.339 m = -7.67 ft -->
     <z-offset> -0.76 </z-offset> <!-- -0.232 m = -0.76 ft -->
-    <yaw-offset>0</yaw-offset>
+    <yaw-offset alias="../../cannon/yaw-offset"/>
     <pitch-offset alias="../../cannon/pitch-offset"/>
-  </submodel>
-
-  <submodel>
-    <name>Right interior smoke</name>
-    <model>Aircraft/F6F-Hellcat/Models/Effects/guns/smoke.xml</model>
-    <trigger alias="../../cannon/trigger"/>
-    <speed>200</speed>
-    <repeat>true</repeat>
-    <delay>0.08</delay>
-    <count>160</count>
-    <x-offset>  9.94 </x-offset> <!-- -3.029 m =  9.94 ft -->
-    <y-offset> -7.67 </y-offset> <!--  2.339 m = -7.67 ft -->
-    <z-offset> -0.76 </z-offset> <!-- -0.232 m = -0.76 ft -->
-    <yaw-offset>-60</yaw-offset>
-    <pitch-offset>-60</pitch-offset>
-    <eda>10</eda>
-    <wind>true</wind>
-    <buoyancy>33</buoyancy>
-    <life>5</life>
+    <life alias="../../cannon/life"/>
+    <wind alias="../../cannon/wind"/>
+    <weight alias="../../cannon/weight"/>
+    <cd alias="../../cannon/cd"/>
+    <eda alias="../../cannon/eda"/>
+    <fuse-range alias="../../cannon/fuse-range"/>
+    <collision alias="../../cannon/collision"/>
+    <collision-report alias="../../cannon/collision-report"/>
+    <expiry alias="../../cannon/expiry"/>
+    <impact alias="../../cannon/impact"/>
+    <impact-report alias="../../cannon/impact-report"/>
+    <submodel-path alias="../../cannon/submodel-path"/>
   </submodel>
 
   <submodel>
@@ -206,43 +179,26 @@
     <model alias="../../cannon/model"/>
     <trigger alias="../../cannon/trigger"/>
     <speed alias="../../cannon/speed"/>
-    <cd alias="../../cannon/cd"/>
-    <eda alias="../../cannon/eda"/>
-    <fuse-range alias="../../cannon/fuse-range"/>
-    <weight alias="../../cannon/weight"/>
-    <life alias="../../cannon/life"/>
     <repeat alias="../../cannon/repeat"/>
     <delay alias="../../cannon/delay"/>
     <count alias="../../cannon/count"/>
-    <wind alias="../../cannon/wind"/>
-    <expiry alias="../../cannon/expiry"/>
-    <collision alias="../../cannon/collision"/>
-    <impact alias="../../cannon/impact"/>
-    <submodel-path alias="../../cannon/submodel-path"/>
     <x-offset>  9.39 </x-offset> <!-- -2.863 m =  9.39 ft -->
     <y-offset> -8.34 </y-offset> <!--  2.542 m = -8.34 ft -->
     <z-offset> -0.67 </z-offset> <!-- -0.204 m = -0.67 ft -->
-    <yaw-offset>0</yaw-offset>
+    <yaw-offset alias="../../cannon/yaw-offset"/>
     <pitch-offset alias="../../cannon/pitch-offset"/>
-  </submodel>
-
-  <submodel>
-    <name>Right center smoke</name>
-    <model>Aircraft/F6F-Hellcat/Models/Effects/guns/smoke.xml</model>
-    <trigger alias="../../cannon/trigger"/>
-    <speed>200</speed>
-    <repeat>true</repeat>
-    <delay>0.08</delay>
-    <count>160</count>
-    <x-offset>  9.39 </x-offset> <!-- -2.863 m =  9.39 ft -->
-    <y-offset> -8.34 </y-offset> <!--  2.542 m = -8.34 ft -->
-    <z-offset> -0.67 </z-offset> <!-- -0.204 m = -0.67 ft -->
-    <yaw-offset>-60</yaw-offset>
-    <pitch-offset>-60</pitch-offset>
-    <eda>10</eda>
-    <wind>true</wind>
-    <buoyancy>33</buoyancy>
-    <life>5</life>
+    <life alias="../../cannon/life"/>
+    <wind alias="../../cannon/wind"/>
+    <weight alias="../../cannon/weight"/>
+    <cd alias="../../cannon/cd"/>
+    <eda alias="../../cannon/eda"/>
+    <fuse-range alias="../../cannon/fuse-range"/>
+    <collision alias="../../cannon/collision"/>
+    <collision-report alias="../../cannon/collision-report"/>
+    <expiry alias="../../cannon/expiry"/>
+    <impact alias="../../cannon/impact"/>
+    <impact-report alias="../../cannon/impact-report"/>
+    <submodel-path alias="../../cannon/submodel-path"/>
   </submodel>
 
   <submodel>
@@ -250,44 +206,26 @@
     <model alias="../../cannon/model"/>
     <trigger alias="../../cannon/trigger"/>
     <speed alias="../../cannon/speed"/>
-    <cd alias="../../cannon/cd"/>
-    <eda alias="../../cannon/eda"/>
-    <fuse-range alias="../../cannon/fuse-range"/>
-    <weight alias="../../cannon/weight"/>
-    <life alias="../../cannon/life"/>
     <repeat alias="../../cannon/repeat"/>
     <delay alias="../../cannon/delay"/>
     <count alias="../../cannon/count"/>
-    <wind alias="../../cannon/wind"/>
-    <expiry alias="../../cannon/expiry"/>
-    <collision alias="../../cannon/collision"/>
-    <impact alias="../../cannon/impact"/>
-    <submodel-path alias="../../cannon/submodel-path"/>
     <x-offset>  9.16 </x-offset> <!-- -2.791 m =  9.16 ft -->
     <y-offset> -8.96 </y-offset> <!--  2.731 m = -8.96 ft -->
     <z-offset> -0.59 </z-offset> <!-- -0.180 m = -0.59 ft -->
-    <yaw-offset>0</yaw-offset>
+    <yaw-offset alias="../../cannon/yaw-offset"/>
     <pitch-offset alias="../../cannon/pitch-offset"/>
-  </submodel>
-
-  <submodel>
-    <name>Right exterior smoke</name>
-    <model>Aircraft/F6F-Hellcat/Models/Effects/guns/smoke.xml</model>
-    <trigger alias="../../cannon/trigger"/>
-    <speed>200</speed>
-    <repeat>true</repeat>
-    <delay>0.08</delay>
-    <count>160</count>
-    <x-offset>  9.16 </x-offset> <!-- -2.791 m =  9.16 ft -->
-    <y-offset> -8.96 </y-offset> <!--  2.731 m = -8.96 ft -->
-    <z-offset> -0.59 </z-offset> <!-- -0.180 m = -0.59 ft -->
-    <yaw-offset>-60</yaw-offset>
-    <pitch-offset>-60</pitch-offset>
-    <eda>10</eda>
-    <wind>true</wind>
-    <buoyancy>33</buoyancy>
-    <life>5</life>
+    <life alias="../../cannon/life"/>
+    <wind alias="../../cannon/wind"/>
+    <weight alias="../../cannon/weight"/>
+    <cd alias="../../cannon/cd"/>
+    <eda alias="../../cannon/eda"/>
+    <fuse-range alias="../../cannon/fuse-range"/>
+    <collision alias="../../cannon/collision"/>
+    <collision-report alias="../../cannon/collision-report"/>
+    <expiry alias="../../cannon/expiry"/>
+    <impact alias="../../cannon/impact"/>
+    <impact-report alias="../../cannon/impact-report"/>
+    <submodel-path alias="../../cannon/submodel-path"/>
   </submodel>
 
 </PropertyList>
-

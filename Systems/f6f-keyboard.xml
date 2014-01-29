@@ -2,21 +2,12 @@
 
 <PropertyList>
 
-  <key n="68">
-    <name>D</name>
-    <desc>Bomber bay</desc>
-    <binding>
-      <command>nasal</command>
-      <script>doors.doorsystem.passengerexport();</script>
-    </binding>
-  </key>
-
   <key n="100">
     <name>d</name>
     <desc>Crew door</desc>
     <binding>
       <command>nasal</command>
-      <script>doors.doorsystem.crewexport();</script>
+      <script>doors.crew.toggle();</script>
     </binding>
   </key>
 
@@ -25,7 +16,7 @@
     <desc>Wings</desc>
     <binding>
       <command>nasal</command>
-      <script>doors.doorsystem.wingsexport();</script>
+      <script>doors.wings.toggle();</script>
     </binding>
   </key>
 
@@ -103,4 +94,3 @@
   </key>
 
 </PropertyList>
-

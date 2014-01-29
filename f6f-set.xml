@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
-<!-- <PropertyList include="f6f-jsbsim-cnf.xml"> -->
-<PropertyList include="f6f-yasim-cnf.xml">
+<PropertyList include="f6f-base.xml">
 
   <sim>
 
     <description>GRUMANN F6F Hellcat (YASim)</description>
     <author>Emmanuel BARANGER (3D/FDM)</author>
+    <flight-model>yasim</flight-model>
+    <aero>f6f-yasim</aero>
 
     <rating>
-      <FDM type="int">     1 </FDM>
-      <systems type="int"> 0 </systems>
-      <cockpit type="int"> 0 </cockpit>
+      <FDM type="int">     2 </FDM>
+      <systems type="int"> 1 </systems>
+      <cockpit type="int"> 1 </cockpit>
       <model type="int">   4 </model>
     </rating>
 
   </sim>
 
 </PropertyList>
-

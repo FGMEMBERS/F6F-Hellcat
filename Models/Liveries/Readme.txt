@@ -29,4 +29,3 @@ F6FTexture    : F6F Drone USN 1946
 These liveries were made by : Herve 2012
 
 Thanks to him.
-

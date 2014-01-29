@@ -13,6 +13,20 @@
           <script>aircraft.livery.dialog.toggle()</script>
         </binding>
       </item>
+      <item>
+        <label>Reload guns</label>
+        <binding>
+          <command>nasal</command>
+          <script>guns.reload_guns();</script>
+        </binding>
+      </item>
+      <item>
+        <label>Unlimited guns</label>
+        <binding>
+          <command>nasal</command>
+          <script>guns.unlimited_guns();</script>
+        </binding>
+      </item>
 <!--
       <item>
         <label>Immatriculation</label>
@@ -26,4 +40,3 @@
   </default>
 
 </PropertyList>
-

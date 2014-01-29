@@ -24,8 +24,7 @@ Crew                          :
 Some useful keys:
 =================
 
-D : Open/Close bombs bay
-e : Open/Close wings (temporary)
+E : Open/Close wings (temporary)
 
 Thanks
 ======
@@ -35,6 +34,7 @@ BARANGER Emmanuel
 January, 05, 2010. 
 
 http://helijah.free.fr/flightgear/hangar.htm
+http://embaranger.free.fr
 embaranger@free.fr
 
 
@@ -63,8 +63,7 @@ Equipage                      :
 Quelques touches utiles :
 =========================
 
-D : Ouverture/Fermeture de la soute à bombes
-e : Pliage des ailes (temporairement)
+E : Pliage des ailes (temporairement)
 
 Remerciements
 =============
@@ -74,5 +73,5 @@ BARANGER Emmanuel
 05 Janvier 2010.
 
 http://helijah.free.fr/flightgear/hangar.htm
+http://embaranger.free.fr
 embaranger@free.fr
-
