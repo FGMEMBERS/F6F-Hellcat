@@ -1138,6 +1138,20 @@
   </animation>
 
   <animation>
+    <type>pick</type>
+    <object-name>Canopy</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.crew.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
     <type>translate</type>
     <object-name>Canopy</object-name>
     <property>sim/model/door-positions/crew/position-norm</property>
@@ -1154,28 +1168,7 @@
     <object-name>Canopy</object-name>
     <property>sim/model/door-positions/crew/position-norm</property>
     <factor> -0.04 </factor>
-    <axis>  <animation>
-        <name>CompressionGauche</name>
-        <object-name>axeGB</object-name>
-        <object-name>roueG</object-name>
-      </animation>
-      
-      <animation>
-        <type>translate</type>
-        <object-name>CompressionGauche</object-name>
-        <property>gear/gear[0]/compression-norm</property>
-        <interpolation>
-          <entry><ind> 0 </ind><dep> 0.0 </dep></entry>
-          <entry><ind> 1 </ind><dep> 0.2 </dep></entry>
-        </interpolation>
-        <axis>
-          <x> 0.077960 </x>
-          <y> 0.000000 </y>
-          <z> 0.442136 </z>
-        </axis>
-      </animation>
-      
-      
+    <axis>
       <x> 0 </x>
       <y> 0 </y>
       <z> 1 </z>

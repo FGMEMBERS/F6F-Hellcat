@@ -6,7 +6,7 @@
 
     <model>
       <livery>
-        <name type="string">Royal Navy</name>
+        <name type="string">(Low) Royal Navy</name>
         <texture>Liveries/1024x1024/royalnavy.png</texture>
         <specular>
           <red>   0.3 </red>

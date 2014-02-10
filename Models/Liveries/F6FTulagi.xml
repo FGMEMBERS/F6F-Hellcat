@@ -6,7 +6,7 @@
 
     <model>
       <livery>
-        <name type="string">F6F USS Tulagi VOF-1 Mediterranean, 1944</name>
+        <name type="string">(Low) F6F USS Tulagi VOF-1 Mediterranean, 1944</name>
         <texture>Liveries/1024x1024/F6FTulagi.png</texture>
         <specular>
           <red>   0.3 </red>

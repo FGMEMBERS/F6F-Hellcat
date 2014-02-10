@@ -6,7 +6,7 @@
 
     <model>
       <livery>
-        <name type="string">F6F USS Belleau Woods VF-21 1944, W. Pacific</name>
+        <name type="string">(Low) F6F USS Belleau Woods VF-21 1944, W. Pacific</name>
         <texture>Liveries/1024x1024/F6FBellauWood.png</texture>
         <specular>
           <red>   0.3 </red>

@@ -6,7 +6,7 @@
 
     <model>
       <livery>
-        <name type="string">United States Navy 1943</name>
+        <name type="string">(Low) United States Navy 1943</name>
         <texture>Liveries/1024x1024/unitedstatesnavy.png</texture>
         <specular>
           <red>   0.3 </red>

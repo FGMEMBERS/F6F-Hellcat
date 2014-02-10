@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
-<!-- GRUMANN F6F Hellcat - 2010 Emmanuel BARANGER
-   
+<!-- GRUMANN F6F Hellcat : 2010 Emmanuel BARANGER
+              updated by : 2014 FGUK
+              updated by : 2014 Emmanuel BARANGER
+
      Grumman Aircraft Engineering Co.
      F6F Hellcat
 
@@ -19,18 +21,18 @@
 
 <airplane mass="9238">
 
-  <approach speed="60" aoa="9">
-    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.3"/>
-    <control-setting axis="/controls/engines/engine[0]/mixture" value="0.55"/>
-    <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="0.6"/>
+  <approach speed="75" aoa="4">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.2"/>
+    <control-setting axis="/controls/engines/engine[0]/mixture" value="1.0"/>
+    <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.0"/>
     <control-setting axis="/controls/flight/flaps" value="1"/>
     <control-setting axis="/controls/gear/gear-down" value="1"/>
   </approach>
 
-  <cruise speed="280" alt="5000">
-    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.7"/>
+  <cruise speed="297" alt="20000">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="1"/>
     <control-setting axis="/controls/engines/engine[0]/mixture" value="0.7"/>
-    <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1"/>
+    <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.4"/>
     <control-setting axis="/controls/flight/flaps" value="0"/>
     <control-setting axis="/controls/gear/gear-down" value="0"/>
   </cruise>
@@ -46,9 +48,9 @@
         dihedral="4.5"
         sweep="-2" 
         camber="0.01">
-        <stall aoa="14" width="1" peak="1.5"/>
-        <flap0 start="0.03" end="0.65" lift="1.35" drag="3.00"/>
-        <flap1 start="0.65" end="0.95" lift="1.20" drag="1.35"/>
+        <stall aoa="18" width="4" peak="1.5"/>
+        <flap0 start="0.032" end="0.655" lift="1.4" drag="1.9"/>
+        <flap1 start="0.655" end="0.952" lift="1.7" drag="1.3"/>
 
         <control-input axis="/controls/flight/flaps" control="FLAP0"/>
         <control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
@@ -59,7 +61,7 @@
         <control-output control="FLAP1" side="left" prop="/surface-positions/left-aileron-pos-norm"/>
         <control-output control="FLAP1" side="right" prop="/surface-positions/right-aileron-pos-norm"/>
 
-        <control-speed control="FLAP1" transition-time="0.1"/>
+        <control-speed control="FLAP0" transition-time="15"/>
   </wing>
 
   <hstab x="-4" y="0.0" z="0.188" 
@@ -67,7 +69,7 @@
          length="2.85" 
          taper="0.58"
          sweep="8">
-         <stall aoa="16" width="1" peak="1.5"/>
+         <stall aoa="16" width="14" peak="1.5"/>
          <flap0 start="0" end="1" lift="1.3" drag="1.1"/>
 
          <control-input axis="/controls/flight/elevator" control="FLAP0"/>
@@ -81,7 +83,7 @@
          length="1.856" 
          taper="0.40"
          sweep="10">
-         <stall aoa="15" width="1" peak="1.5"/>
+         <stall aoa="14" width="4" peak="1.5"/>
          <flap0 start="0" end="1" lift="1.3" drag="1.2"/>
 
          <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
@@ -105,7 +107,7 @@
              radius="2" 
              mass="1900"
              moment="105.5"
-             cruise-alt="2000"
+             cruise-alt="20000"
              cruise-power="1095"
              cruise-speed="190"
              cruise-rpm="1037"
@@ -153,11 +155,13 @@
         <control-speed control="EXTEND" transition-time="7"/>
         <control-output control="EXTEND" prop="/gear/gear[2]/position-norm"/>
   </gear>
-
+<!--
   <tank x="1.4" y="2.7" z="-0.4" capacity="570"/>
-  <tank x="1" y="0" z="-0.355" capacity="884"/>
+  -->
+  <tank x="1" y="0" z="-0.355" capacity="1550"/>
+  <!--
   <tank x="1.4" y="-2.7" z="-0.4" capacity="570"/>
-
+-->
   <!-- Crosse d'appontage -->
   <hook x="-6.054" y="0" z="-0.769"
         length="1.169"
@@ -174,7 +178,7 @@
              <control-speed control="LEXTEND" transition-time="1"/>
   </launchbar>
 
-  <!-- Mass displacement -->
-  <ballast x="0" y="0" z="-2" mass="1000"/>
+  <!-- CG theorique x=1.302 y=0 z=-0.293 -->
+  <ballast x="0" y="0.0" z="-2" mass="1000"/>
 
 </airplane>

@@ -6,7 +6,7 @@
 
     <model>
       <livery>
-        <name type="string">VF-27</name>
+        <name type="string">(Low) VF-27</name>
         <texture>Liveries/1024x1024/VF-27.png</texture>
         <specular>
           <red>   0.3 </red>
