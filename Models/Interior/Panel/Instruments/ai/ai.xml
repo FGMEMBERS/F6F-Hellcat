@@ -15,25 +15,12 @@
     <object-name>vitre</object-name>
   </animation>
 
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
-    <condition>
-      <not><property>sim/rendering/rembrandt/enabled</property></not>
-    </condition>
-    <object-name>vitre</object-name>
-  </animation>
-
   <!-- working for Rembrandt -->
   <effect>
-    <inherits-from>Effects/model-transparent</inherits-from>
-    <condition>
-      <property>sim/rendering/rembrandt/enabled</property>
-    </condition>
+    <inherits-from>Aircraft/F6F-Hellcat/Models/Effects/Glass/glass</inherits-from>
     <object-name>vitre</object-name>
   </effect>
-
+  
   <animation>
     <type>material</type>
     <object-name>face</object-name>
@@ -54,9 +41,9 @@
     <object-name>horizon-line</object-name>
     <property>/instrumentation/attitude-indicator/indicated-roll-deg</property>
     <axis>
-      <x>1</x>
-      <y>0</y>
-      <z>0</z>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
@@ -76,9 +63,9 @@
       <entry><ind>  180 </ind><dep> -0.03 </dep></entry>
     </interpolation>
       <axis> 
-       <x>0</x>
-       <y>0</y>
-       <z>1</z>
+       <x> 0 </x>
+       <y> 0 </y>
+       <z> 1 </z>
     </axis>
   </animation>
 

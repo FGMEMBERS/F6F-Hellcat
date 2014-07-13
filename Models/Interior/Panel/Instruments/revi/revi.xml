@@ -24,18 +24,9 @@
     <object-name>DLens</object-name>
   </animation>
 
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
-    <object-name>vitre_turn</object-name>
-    <object-name>PLens</object-name>
-    <object-name>DLens</object-name>
-  </animation>
-  
   <!-- working for Rembrandt -->
   <effect>
-    <inherits-from>Effects/model-transparent</inherits-from>
+    <inherits-from>Aircraft/F6F-Hellcat/Models/Effects/Glass/glass</inherits-from>
     <object-name>vitre_turn</object-name>
     <object-name>PLens</object-name>
     <object-name>DLens</object-name>
@@ -64,4 +55,3 @@
   </animation>
 
 </PropertyList>
-

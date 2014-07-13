@@ -5,13 +5,13 @@
   <sim>
 
     <description>GRUMANN F6F Hellcat (YASim)</description>
-    <author>Emmanuel BARANGER (3D/FDM), FGUK (FDM)</author>
+    <author>Emmanuel BARANGER (3D/FDM), FGUK (FDM),  Brent HUGH (Ammo re-load, Bombable compatibility)</author>
     <flight-model>yasim</flight-model>
     <aero>f6f-yasim</aero>
 
     <rating>
       <FDM type="int">     3 </FDM>
-      <systems type="int"> 1 </systems>
+      <systems type="int"> 2 </systems>
       <cockpit type="int"> 2 </cockpit>
       <model type="int">   4 </model>
     </rating>

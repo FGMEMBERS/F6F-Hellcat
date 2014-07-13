@@ -5,7 +5,7 @@
   <sim include="Systems/views.xml">
 
     <description>GRUMANN F6F Hellcat (YASim)</description>
-    <author>Emmanuel BARANGER (3D/FDM), FGUK (FDM)</author>
+    <author>Emmanuel BARANGER (3D/FDM), FGUK (FDM),  Brent HUGH (Ammo re-load, Bombable compatibility)</author>
     <status>devel</status>
 
     <fuel-fraction>1.0</fuel-fraction>
@@ -42,7 +42,6 @@
         <int type="int" n="5">  0 </int>                                           <!--  5 immat -->
         <int type="bool" n="6" alias="/smoke/active"> 0 </int>                     <!--  6 start smoke -->
         <int type="int" n="7" alias="smoke/particlepersec"> 50 </int>              <!--  7 particlepersec -->
-        <int type="int" n="10" alias="controls/armament/trigger">0</int>           <!-- 10 reserved for bombable mode -->
         <float n="0" alias="/sim/model/door-positions/crew/position-norm"/>
         <float n="1" alias="/sim/model/door-positions/passenger/position-norm"/>
         <float n="2" alias="/position/gear-agl-m"> 0 </float>                      <!-- altitude for MP shadow -->
@@ -56,7 +55,9 @@
         <float n="12" alias="/gear/gear[1]/rollspeed-ms"/>
         <float n="13" alias="/gear/gear[2]/rollspeed-ms"/>
         <float n="14" alias="/engines/engine[0]/cranking"/>
-        <!-- For Bombable -->
+        <!-- Required to make Bombable work over multiplayer -->
+        <!-- String 9 is for Bombable damage/reset messages -->
+        <!-- Int 10,11,... are for various weapons triggers as particular to this aircraft -->
         <int type="int" n="10" alias="controls/armament/trigger">0</int>
         <string n="9" type="string" />
         </generic>
@@ -75,10 +76,6 @@
   <engines>
     <engine n="0">
       <engine-num type="int">0</engine-num>
-      <running>true</running>
-    </engine>
-    <engine n="1">
-      <engine-num type="int">1</engine-num>
       <running>true</running>
     </engine>
   </engines>

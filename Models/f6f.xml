@@ -154,9 +154,6 @@
 
   <effect>
     <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
-    <condition>
-      <not><property>sim/rendering/rembrandt/enabled</property></not>
-    </condition>
     <object-name>fuselage</object-name>
     <object-name>capot</object-name>
     <object-name>ailetteG1</object-name>
@@ -186,65 +183,19 @@
     <object-name>tourverriere</object-name>
   </effect>
 
+  <!-- working for Rembrandt -->
   <effect>
-    <inherits-from>Aircraft/Generic/Effects/model-combined-deferred</inherits-from>
-    <condition>
-      <property>sim/rendering/rembrandt/enabled</property>
-    </condition>
-    <object-name>fuselage</object-name>
-    <object-name>capot</object-name>
-    <object-name>ailetteG1</object-name>
-    <object-name>ailetteG2</object-name>
-    <object-name>ailetteD1</object-name>
-    <object-name>ailetteD2</object-name>
-    <object-name>baseailes</object-name>
-    <object-name>aileG</object-name>
-    <object-name>aileD</object-name>
-    <object-name>aileronG</object-name>
-    <object-name>voletG1</object-name>
-    <object-name>voletG2</object-name>
-    <object-name>aileronD</object-name>
-    <object-name>voletD1</object-name>
-    <object-name>voletD2</object-name>
-    <object-name>ailes2</object-name>
-    <object-name>profondeurG</object-name>
-    <object-name>profondeurD</object-name>
-    <object-name>direction</object-name>
-    <object-name>bol</object-name>
-    <object-name>porteGA</object-name>
-    <object-name>porteGB</object-name>
-    <object-name>porteDA</object-name>
-    <object-name>porteDB</object-name>
-    <object-name>porteA</object-name>
-    <object-name>tourvitres</object-name>
-    <object-name>tourverriere</object-name>
-  </effect>
-
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
-    <!--
-    <condition>
-      <not><property>sim/rendering/rembrandt/enabled</property></not>
-    </condition>
-    -->
+    <inherits-from>Aircraft/F6F-Hellcat/Models/Effects/Glass/glass</inherits-from>
     <object-name>vitres</object-name>
     <object-name>verriere</object-name>
-  </animation>
-
-  <!--  REMBRANDT support for transparent objects-->
+  </effect>
+  
   <effect>
     <inherits-from>Effects/model-transparent</inherits-from>
-    <condition>
-      <property>sim/rendering/rembrandt/enabled</property>
-    </condition>
     <object-name>vitres</object-name>
     <object-name>verriere</object-name>
-    <object-name>propblur</object-name>
-    <object-name>propdisc</object-name>
   </effect>
-
+  
   <!-- Une ombre pour OSG -->
   <model>
     <path>Aircraft/F6F-Hellcat/Models/shadow.xml</path>

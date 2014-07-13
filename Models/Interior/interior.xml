@@ -16,27 +16,19 @@
     <object-name>intverriere</object-name>
   </animation>
 
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
-    <condition>
-      <not><property>sim/rendering/rembrandt/enabled</property></not>
-    </condition>
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Aircraft/F6F-Hellcat/Models/Effects/Glass/glass</inherits-from>
     <object-name>intvitres</object-name>
     <object-name>intverriere</object-name>
-  </animation>
-
-  <!--  REMBRANDT support for transparent objects-->
+  </effect>
+  
   <effect>
     <inherits-from>Effects/model-transparent</inherits-from>
-    <condition>
-      <property>sim/rendering/rembrandt/enabled</property>
-    </condition>
     <object-name>intvitres</object-name>
     <object-name>intverriere</object-name>
-  </effect> 
-
+  </effect>
+  
   <!-- Pilote -->
   <model>
     <path>Aircraft/F6F-Hellcat/Models/Pilot/pilot.xml</path>
@@ -103,4 +95,3 @@
   </animation>
 
 </PropertyList>
-
