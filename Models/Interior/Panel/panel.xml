@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>panel.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>panel</object-name>
+
+    <!-- Objets transparents -->
+  </animation>
+
+  <!-- ai -->
+  <model>
+    <path>Aircraft/F6F-Hellcat/Models/Interior/Panel/Instruments/ai/ai.xml</path>
+    <offsets>
+      <x-m> 0.056 </x-m>
+      <y-m> 0.147 </y-m>
+      <z-m> 0.004 </z-m>
+    </offsets>
+  </model>
+
+  <!-- alt -->
+  <model>
+    <path>Aircraft/F6F-Hellcat/Models/Interior/Panel/Instruments/alt/alt.xml</path>
+    <offsets>
+      <x-m>  0.058 </x-m>
+      <y-m> -0.245 </y-m>
+      <z-m> -0.157 </z-m>
+    </offsets>
+  </model>
+
+  <!-- asi -->
+  <model>
+    <path>Aircraft/F6F-Hellcat/Models/Interior/Panel/Instruments/asi/asi.xml</path>
+    <offsets>
+      <x-m>  0.058 </x-m>
+      <y-m> -0.121 </y-m>
+      <z-m> -0.157 </z-m>
+    </offsets>
+  </model>
+
+  <!-- turn -->
+  <model>
+    <path>Aircraft/F6F-Hellcat/Models/Interior/Panel/Instruments/turn/turn.xml</path>
+    <offsets>
+      <x-m>  0.058 </x-m>
+      <y-m> -0.002 </y-m>
+      <z-m> -0.157 </z-m>
+    </offsets>
+  </model>
+
+  <!-- rpm -->
+  <model>
+    <path>Aircraft/F6F-Hellcat/Models/Interior/Panel/Instruments/rpm/rpm.xml</path>
+    <offsets>
+      <x-m>  0.054 </x-m>
+      <y-m>  0.295 </y-m>
+      <z-m> -0.038 </z-m>
+    </offsets>
+  </model>
+
+  <!-- compass -->
+  <model>
+    <path>Aircraft/F6F-Hellcat/Models/Interior/Panel/Instruments/compass/compass.xml</path>
+    <offsets>
+      <x-m>  0.057 </x-m>
+      <y-m> -0.160 </y-m>
+      <z-m>  0.020 </z-m>
+    </offsets>
+  </model>
+
+  <!-- vsi -->
+  <model>
+    <path>Aircraft/F6F-Hellcat/Models/Interior/Panel/Instruments/vsi/vsi.xml</path>
+    <offsets>
+      <x-m>  0.058 </x-m>
+      <y-m>  0.121 </y-m>
+      <z-m> -0.157 </z-m>
+    </offsets>
+  </model>
+
+  <!-- revi -->
+  <model>
+    <path>Aircraft/F6F-Hellcat/Models/Interior/Panel/Instruments/revi/revi.xml</path>
+    <offsets>
+      <x-m> 0.13 </x-m>
+      <y-m> 0.00 </y-m>
+      <z-m> 0.14 </z-m>
+    </offsets>
+  </model>
+
+</PropertyList>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <sim include="Systems/views.xml">
+
+    <description>GRUMANN F6F Hellcat (YASim)</description>
+    <author>Emmanuel BARANGER (3D/FDM), FGUK (FDM),  Brent HUGH (Ammo re-load, Bombable compatibility)</author>
+    <status>devel</status>
+
+    <fuel-fraction>1.0</fuel-fraction>
+
+    <sound>
+      <audible>true</audible>
+      <path>Aircraft/F6F-Hellcat/Sounds/f6f-sound.xml</path>
+    </sound>
+
+    <model>
+      <path>Aircraft/F6F-Hellcat/Models/f6f.xml</path>
+      <livery>
+        <file type="string">default</file>
+      </livery>
+    </model>
+
+    <submodels> 
+      <serviceable type="bool">true</serviceable>
+      <path>Aircraft/F6F-Hellcat/Models/Effects/guns/submodels.xml</path>
+    </submodels>
+
+    <startup>
+      <splash-texture>Aircraft/F6F-Hellcat/f6f-splash.png</splash-texture>
+    </startup>
+
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic> 
+        <int type="int" n="0">  0 </int>                                           <!--  0 immat -->
+        <int type="int" n="1">  0 </int>                                           <!--  1 immat -->
+        <int type="int" n="2">  0 </int>                                           <!--  2 immat -->
+        <int type="int" n="3">  0 </int>                                           <!--  3 immat -->
+        <int type="int" n="4">  0 </int>                                           <!--  4 immat -->
+        <int type="int" n="5">  0 </int>                                           <!--  5 immat -->
+        <int type="bool" n="6" alias="/smoke/active"> 0 </int>                     <!--  6 start smoke -->
+        <int type="int" n="7" alias="smoke/particlepersec"> 50 </int>              <!--  7 particlepersec -->
+        <float n="0" alias="/sim/model/door-positions/crew/position-norm"/>
+        <float n="1" alias="/sim/model/door-positions/passenger/position-norm"/>
+        <float n="2" alias="/position/gear-agl-m"> 0 </float>                      <!-- altitude for MP shadow -->
+        <float n="3" alias="/position/altitude-ft"> 0 </float>                     <!-- altitude for Smoke/Trail -->
+        <float n="4" alias="/sim/model/door-positions/wings/position-norm"/>       <!-- Wings -->
+        <float n="7" alias="/engines/engine[0]/rpm"/>
+        <float n="8" alias="/gear/gear[0]/wow/"/>
+        <float n="9" alias="/gear/gear[1]/wow/"/>
+        <float n="10" alias="/gear/gear[2]/wow/"/>
+        <float n="11" alias="/gear/gear[0]/rollspeed-ms"/>
+        <float n="12" alias="/gear/gear[1]/rollspeed-ms"/>
+        <float n="13" alias="/gear/gear[2]/rollspeed-ms"/>
+        <float n="14" alias="/engines/engine[0]/cranking"/>
+        <!-- Required to make Bombable work over multiplayer -->
+        <!-- String 9 is for Bombable damage/reset messages -->
+        <!-- Int 10,11,... are for various weapons triggers as particular to this aircraft -->
+        <int type="int" n="10" alias="controls/armament/trigger">0</int>
+        <string n="9" type="string" />
+        </generic>
+    </multiplay>
+
+    <help include="Systems/help.xml"/>
+
+    <menubar include="Dialogs/f6f-menu.xml"/>
+
+  </sim>
+
+  <surface-positions>
+    <wing-fold-pos-norm alias="/sim/model/door-positions/passenger/position-norm"/>
+  </surface-positions>
+
+  <engines>
+    <engine n="0">
+      <engine-num type="int">0</engine-num>
+      <running>true</running>
+    </engine>
+  </engines>
+
+  <consumables>
+    <fuel>
+      <tank n="0">
+        <tank-num type="int">0</tank-num>
+        <level-gal_us archive="y">2070</level-gal_us>
+      </tank>
+    </fuel>
+  </consumables>
+
+  <input>
+    <keyboard include="Systems/f6f-keyboard.xml"/>
+  </input>
+
+  <nasal>
+    <doors>
+      <file>Aircraft/F6F-Hellcat/Nasal/doors.nas</file>
+    </doors>
+    <f6f>
+      <file>Aircraft/F6F-Hellcat/Nasal/liveries.nas</file>
+      <file>Aircraft/F6F-Hellcat/Nasal/light.nas</file>
+    </f6f>
+    <guns>
+      <file>Aircraft/F6F-Hellcat/Nasal/weapons.nas</file>
+      <file>Aircraft/F6F-Hellcat/Nasal/revi.nas</file>
+    </guns>
+  </nasal>
+
+</PropertyList>
