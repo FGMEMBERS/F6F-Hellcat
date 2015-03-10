@@ -16,19 +16,27 @@
     <object-name>intverriere</object-name>
   </animation>
 
-  <!-- working for Rembrandt -->
-  <effect>
-    <inherits-from>Aircraft/F6F-Hellcat/Models/Effects/Glass/glass</inherits-from>
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <condition>
+      <not><property>sim/rendering/rembrandt/enabled</property></not>
+    </condition>
     <object-name>intvitres</object-name>
     <object-name>intverriere</object-name>
-  </effect>
-  
+  </animation>
+
+  <!--  REMBRANDT support for transparent objects-->
   <effect>
     <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
     <object-name>intvitres</object-name>
     <object-name>intverriere</object-name>
-  </effect>
-  
+  </effect> 
+
   <!-- Pilote -->
   <model>
     <path>Aircraft/F6F-Hellcat/Models/Pilot/pilot.xml</path>
@@ -57,20 +65,6 @@
   </animation>
 
   <animation>
-    <type>pick</type>
-    <object-name>IntCanopy</object-name>
-    <visible>true</visible>
-    <action>
-      <button>0</button>
-      <repeatable>false</repeatable>
-      <binding>
-        <command>nasal</command>
-        <script>doors.crew.toggle();</script>
-      </binding>
-    </action>
-  </animation>
-
-  <animation>
     <type>translate</type>
     <object-name>IntCanopy</object-name>
     <property>sim/model/door-positions/crew/position-norm</property>
@@ -95,3 +89,4 @@
   </animation>
 
 </PropertyList>
+

@@ -4,7 +4,20 @@
 
   <path>WhiteLight.ac</path>
 
-  <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+  <animation>
+    <type>noshadow</type>
+    <object-name>Light</object-name>
+  </animation>
+
+  <!--  REMBRANDT support for transparent objects-->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>Light</object-name>
+  </effect> 
+
   <animation>
     <type>alpha-test</type>
     <alpha-factor>0.01</alpha-factor>
@@ -23,6 +36,7 @@
       <red>   2 </red>
       <green> 2 </green>
       <blue>  2 </blue>
+      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
     </emission>
   </animation>
 

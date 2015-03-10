@@ -6,13 +6,18 @@
 
     <model>
       <livery>
-        <name type="string">(Low) F6F Captured</name>
-        <texture>Liveries/1024x1024/F6Fcaptured.png</texture>
+        <name type="string">Captured F-6F (Imperial Japanese navy)</name>
+        <texture>Liveries/F6Fcaptured.png</texture>
         <specular>
           <red>   0.3 </red>
           <green> 0.3 </green>
           <blue>  0.3 </blue>
         </specular>
+        <emission>
+          <red>   0.2 </red>
+          <green> 0.2 </green>
+          <blue>  0.2 </blue>
+        </emission>
       </livery>
     </model>
 

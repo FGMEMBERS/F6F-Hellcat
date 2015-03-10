@@ -7,12 +7,17 @@
     <model>
       <livery>
           <name type="string">Royal Navy, 892NAS (Drem AB)</name>
-          <texture>Liveries/2048x2048/RN_892NAS.png</texture>
+          <texture>Liveries/RN_892NAS.png</texture>
           <specular>
             <red>   0.3 </red>
             <green> 0.3 </green>
             <blue>  0.3 </blue>
           </specular>
+          <emission>
+            <red>   0.2 </red>
+            <green> 0.2 </green>
+            <blue>  0.2 </blue>
+          </emission>
       </livery>
     </model>
 

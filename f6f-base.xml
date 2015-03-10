@@ -5,8 +5,8 @@
   <sim include="Systems/views.xml">
 
     <description>GRUMANN F6F Hellcat (YASim)</description>
-    <author>Emmanuel BARANGER (3D/FDM), FGUK (FDM),  Brent HUGH (Ammo re-load, Bombable compatibility)</author>
-    <status>devel</status>
+    <author>Emmanuel BARANGER (3D/FDM)</author>
+    <status>devel 0.4b</status>
 
     <fuel-fraction>1.0</fuel-fraction>
 
@@ -26,6 +26,15 @@
       <serviceable type="bool">true</serviceable>
       <path>Aircraft/F6F-Hellcat/Models/Effects/guns/submodels.xml</path>
     </submodels>
+	
+	  <systems>
+      <electrical>
+        <path>Aircraft/Generic/generic-electrical.xml</path>
+	  </electrical>
+	  <autopilot>
+        <path>Aircraft/F6F-Hellcat/Systems/autopilot5.xml</path>
+      </autopilot>	
+	</systems>
 
     <startup>
       <splash-texture>Aircraft/F6F-Hellcat/f6f-splash.png</splash-texture>
@@ -42,6 +51,7 @@
         <int type="int" n="5">  0 </int>                                           <!--  5 immat -->
         <int type="bool" n="6" alias="/smoke/active"> 0 </int>                     <!--  6 start smoke -->
         <int type="int" n="7" alias="smoke/particlepersec"> 50 </int>              <!--  7 particlepersec -->
+        <int type="int" n="10" alias="controls/armament/trigger">0</int>           <!-- 10 reserved for bombable mode -->
         <float n="0" alias="/sim/model/door-positions/crew/position-norm"/>
         <float n="1" alias="/sim/model/door-positions/passenger/position-norm"/>
         <float n="2" alias="/position/gear-agl-m"> 0 </float>                      <!-- altitude for MP shadow -->
@@ -55,9 +65,7 @@
         <float n="12" alias="/gear/gear[1]/rollspeed-ms"/>
         <float n="13" alias="/gear/gear[2]/rollspeed-ms"/>
         <float n="14" alias="/engines/engine[0]/cranking"/>
-        <!-- Required to make Bombable work over multiplayer -->
-        <!-- String 9 is for Bombable damage/reset messages -->
-        <!-- Int 10,11,... are for various weapons triggers as particular to this aircraft -->
+        <!-- For Bombable -->
         <int type="int" n="10" alias="controls/armament/trigger">0</int>
         <string n="9" type="string" />
         </generic>
@@ -78,13 +86,17 @@
       <engine-num type="int">0</engine-num>
       <running>true</running>
     </engine>
+    <engine n="1">
+      <engine-num type="int">1</engine-num>
+      <running>true</running>
+    </engine>
   </engines>
 
   <consumables>
     <fuel>
       <tank n="0">
         <tank-num type="int">0</tank-num>
-        <level-gal_us archive="y">2070</level-gal_us>
+        <level-gal_us archive="y">250</level-gal_us>
       </tank>
     </fuel>
   </consumables>

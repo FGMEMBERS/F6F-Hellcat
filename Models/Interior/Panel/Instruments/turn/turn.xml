@@ -14,12 +14,25 @@
     <object-name>vitre</object-name>
   </animation>
 
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <condition>
+      <not><property>sim/rendering/rembrandt/enabled</property></not>
+    </condition>
+    <object-name>vitre</object-name>
+  </animation>
+
   <!-- working for Rembrandt -->
   <effect>
-    <inherits-from>Aircraft/F6F-Hellcat/Models/Effects/Glass/glass</inherits-from>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
     <object-name>vitre</object-name>
   </effect>
-  
+
   <animation>
     <type>material</type>
     <object-name>face</object-name>   
@@ -37,7 +50,7 @@
     <type>rotate</type>
     <object-name>needle</object-name>
     <property>/instrumentation/turn-indicator/indicated-turn-rate</property>
-    <factor> 20 </factor>
+    <factor>20.0</factor>
     <axis>
       <x> -1 </x>
       <y>  0 </y>
@@ -49,7 +62,7 @@
     <type>rotate</type>
     <object-name>ball</object-name>
     <property>/instrumentation/slip-skid-ball/indicated-slip-skid</property>
-    <factor> 21 </factor>
+    <factor>21</factor>
     <min-deg> -19 </min-deg>
     <max-deg>  19 </max-deg>
     <center>
@@ -65,3 +78,5 @@
   </animation>
 
 </PropertyList>
+
+

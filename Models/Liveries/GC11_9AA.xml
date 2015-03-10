@@ -7,12 +7,17 @@
     <model>
       <livery>
           <name type="string">GC II/9 "Auvergne", Armee de l'Air</name>
-          <texture>Liveries/2048x2048/GC11_9AA.png</texture>
+          <texture>Liveries/GC11_9AA.png</texture>
           <specular>
             <red>   0.3 </red>
             <green> 0.3 </green>
             <blue>  0.3 </blue>
           </specular>
+          <emission>
+            <red>   0.2 </red>
+            <green> 0.2 </green>
+            <blue>  0.2 </blue>
+          </emission>
       </livery>
     </model>
 

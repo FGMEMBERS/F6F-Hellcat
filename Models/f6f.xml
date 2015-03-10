@@ -152,8 +152,12 @@
     </specular>
   </animation>
 
+  <!--
   <effect>
     <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
+    <condition>
+      <not><property>sim/rendering/rembrandt/enabled</property></not>
+    </condition>
     <object-name>fuselage</object-name>
     <object-name>capot</object-name>
     <object-name>ailetteG1</object-name>
@@ -183,20 +187,66 @@
     <object-name>tourverriere</object-name>
   </effect>
 
-  <!-- working for Rembrandt -->
   <effect>
-    <inherits-from>Aircraft/F6F-Hellcat/Models/Effects/Glass/glass</inherits-from>
+    <inherits-from>Aircraft/Generic/Effects/model-combined-deferred</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>fuselage</object-name>
+    <object-name>capot</object-name>
+    <object-name>ailetteG1</object-name>
+    <object-name>ailetteG2</object-name>
+    <object-name>ailetteD1</object-name>
+    <object-name>ailetteD2</object-name>
+    <object-name>baseailes</object-name>
+    <object-name>aileG</object-name>
+    <object-name>aileD</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>voletG1</object-name>
+    <object-name>voletG2</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>voletD1</object-name>
+    <object-name>voletD2</object-name>
+    <object-name>ailes2</object-name>
+    <object-name>profondeurG</object-name>
+    <object-name>profondeurD</object-name>
+    <object-name>direction</object-name>
+    <object-name>bol</object-name>
+    <object-name>porteGA</object-name>
+    <object-name>porteGB</object-name>
+    <object-name>porteDA</object-name>
+    <object-name>porteDB</object-name>
+    <object-name>porteA</object-name>
+    <object-name>tourvitres</object-name>
+    <object-name>tourverriere</object-name>
+  </effect>
+-->
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <!--
+    <condition>
+      <not><property>sim/rendering/rembrandt/enabled</property></not>
+    </condition>
+    -->
     <object-name>vitres</object-name>
     <object-name>verriere</object-name>
-  </effect>
-  
+  </animation>
+
+  <!--  REMBRANDT support for transparent objects-->
   <effect>
     <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
     <object-name>vitres</object-name>
     <object-name>verriere</object-name>
+    <object-name>propblur</object-name>
+    <object-name>propdisc</object-name>
   </effect>
-  
-  <!-- Une ombre pour OSG -->
+
+  <!-- Une ombre pour OSG 
   <model>
     <path>Aircraft/F6F-Hellcat/Models/shadow.xml</path>
     <offsets>
@@ -205,7 +255,7 @@
       <z-m> -1.524 </z-m>
     </offsets>
   </model>
-
+-->
   <!-- Interior -->
   <model>
     <path>Aircraft/F6F-Hellcat/Models/Interior/interior.xml</path>
@@ -1089,20 +1139,6 @@
   </animation>
 
   <animation>
-    <type>pick</type>
-    <object-name>Canopy</object-name>
-    <visible>true</visible>
-    <action>
-      <button>0</button>
-      <repeatable>false</repeatable>
-      <binding>
-        <command>nasal</command>
-        <script>doors.crew.toggle();</script>
-      </binding>
-    </action>
-  </animation>
-
-  <animation>
     <type>translate</type>
     <object-name>Canopy</object-name>
     <property>sim/model/door-positions/crew/position-norm</property>
@@ -1119,7 +1155,28 @@
     <object-name>Canopy</object-name>
     <property>sim/model/door-positions/crew/position-norm</property>
     <factor> -0.04 </factor>
-    <axis>
+    <axis>  <animation>
+        <name>CompressionGauche</name>
+        <object-name>axeGB</object-name>
+        <object-name>roueG</object-name>
+      </animation>
+      
+      <animation>
+        <type>translate</type>
+        <object-name>CompressionGauche</object-name>
+        <property>gear/gear[0]/compression-norm</property>
+        <interpolation>
+          <entry><ind> 0 </ind><dep> 0.0 </dep></entry>
+          <entry><ind> 1 </ind><dep> 0.2 </dep></entry>
+        </interpolation>
+        <axis>
+          <x> 0.077960 </x>
+          <y> 0.000000 </y>
+          <z> 0.442136 </z>
+        </axis>
+      </animation>
+      
+      
       <x> 0 </x>
       <y> 0 </y>
       <z> 1 </z>

@@ -7,12 +7,8 @@
     <model>
       <livery>
         <name type="string">USS Essex CAG-15, Cdr D. McCampbell 34 kills</name>
-        <texture>Liveries/2048x2048/USN_CAG15.png</texture>
-        <emission>
-          <red>   0.2 </red>
-          <green> 0.2 </green>
-          <blue>  0.2 </blue>
-        </emission>
+        <texture>Liveries/USN_CAG15.png</texture>
+        
       </livery>
     </model>
 
