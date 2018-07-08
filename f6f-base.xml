@@ -2,6 +2,14 @@
 
 <PropertyList>
 
+  <controls>
+    <engines>
+      <engine n="0">
+        <boost type="double">0.7</boost>
+      </engine>
+    </engines>
+  </controls>
+
   <sim include="Systems/views.xml">
 
     <description>GRUMANN F6F Hellcat (YASim)</description>
@@ -9,6 +17,7 @@
     <status>devel</status>
 
     <fuel-fraction>1.0</fuel-fraction>
+    <allow-toggle-cockpit type="bool">true</allow-toggle-cockpit>
 
     <sound>
       <audible>true</audible>
@@ -72,13 +81,6 @@
   <surface-positions>
     <wing-fold-pos-norm alias="/sim/model/door-positions/passenger/position-norm"/>
   </surface-positions>
-
-  <engines>
-    <engine n="0">
-      <engine-num type="int">0</engine-num>
-      <running>true</running>
-    </engine>
-  </engines>
 
   <consumables>
     <fuel>

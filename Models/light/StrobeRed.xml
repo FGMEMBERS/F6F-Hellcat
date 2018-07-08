@@ -33,7 +33,7 @@
     <type>select</type>
     <object-name>Light</object-name>
     <condition>
-      <property>/sim/model/lights/sbc2/state</property>
+      <property>sim/model/lights/sbc2/state</property>
     </condition>
   </animation>
 
@@ -44,7 +44,7 @@
       <red>   2 </red>
       <green> 0 </green>
       <blue>  0 </blue>
-      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
     </emission>
   </animation>
  

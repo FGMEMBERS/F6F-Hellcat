@@ -16,6 +16,10 @@
     <desc>Start engine</desc>
   </key>
   <key>
+    <name>Alt+S</name>
+    <desc>Toggle supercharger speed</desc>
+  </key>
+  <key>
     <name>d</name>
     <desc>Open/Close canopy</desc>
   </key>
@@ -31,8 +35,12 @@
     <name>o/O</name>
     <desc>Hook up/down</desc>
   </key>
-  <line>To start engine: }} to engage magneto, then press and hold 's'.</line>
-  <line></line>
+  <line>To start engine: }} to engage magnetos, then press and hold 's'.</line>
+  <line/>
+  <line>Take off with supercharger in low speed and 60% throttle.</line>
+  <line>Above 14500 ft altitude, reduce throttle, engage high speed supercharger</line>
+  <line>then re-adjust manifold pressure with throttle.</line>
+  <line/>
   <line>F6F comes with six machine guns loaded with 400 rounds of ammo each.</line>
   <line>Re-load from the F6F Hellcat menu (must be on ground and at full stop).</line> 
 

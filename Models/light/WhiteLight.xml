@@ -4,7 +4,7 @@
 
   <path>WhiteLight.ac</path>
 
-  <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+  <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
   <animation>
     <type>alpha-test</type>
     <alpha-factor>0.01</alpha-factor>

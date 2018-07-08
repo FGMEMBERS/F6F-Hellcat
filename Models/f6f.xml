@@ -965,7 +965,7 @@
   <animation>
     <type>texrotate</type>
     <object-name>roueG2</object-name>
-    <property>/gear/gear[0]/rollspeed-ms</property>
+    <property>gear/gear[0]/rollspeed-ms</property>
     <factor> 30 </factor>
     <center>
       <x> 0.19168750 </x>
@@ -982,7 +982,7 @@
   <animation>
     <type>rotate</type>
     <object-name>roueG2</object-name>
-    <property>/orientation/pitch-deg</property>
+    <property>orientation/pitch-deg</property>
     <condition>
       <greater-than>
         <property>gear/gear[0]/compression-norm</property>
@@ -1027,7 +1027,7 @@
   <animation>
     <type>texrotate</type>
     <object-name>roueD2</object-name>
-    <property>/gear/gear[1]/rollspeed-ms</property>
+    <property>gear/gear[1]/rollspeed-ms</property>
     <factor> 30 </factor>
     <center>
       <x> 0.19168750 </x>
@@ -1044,7 +1044,7 @@
   <animation>
     <type>rotate</type>
     <object-name>roueD2</object-name>
-    <property>/orientation/pitch-deg</property>
+    <property>orientation/pitch-deg</property>
     <condition>
       <greater-than>
         <property>gear/gear[1]/compression-norm</property>
@@ -1067,7 +1067,7 @@
   <animation>
     <type>spin</type>
     <object-name>roueA</object-name>
-    <property>/gear/gear[2]/rollspeed-ms</property>
+    <property>gear/gear[2]/rollspeed-ms</property>
     <factor> 30 </factor>
     <center>
       <x-m>  3.781 </x-m>
@@ -1131,7 +1131,7 @@
     <type>rotate</type>
     <object-name>ailetteG1</object-name>
     <object-name>intailetteG1</object-name>
-    <property>/velocities/airspeed-kt</property>
+    <property>velocities/airspeed-kt</property>
     <interpolation>
       <entry><ind>   0 </ind><dep> 30 </dep></entry>
       <entry><ind>  70 </ind><dep> 25 </dep></entry>
@@ -1154,7 +1154,7 @@
     <type>rotate</type>
     <object-name>ailetteG2</object-name>
     <object-name>intailetteG2</object-name>
-    <property>/velocities/airspeed-kt</property>
+    <property>velocities/airspeed-kt</property>
     <interpolation>
       <entry><ind>   0 </ind><dep> 30 </dep></entry>
       <entry><ind>  70 </ind><dep> 25 </dep></entry>
@@ -1177,7 +1177,7 @@
     <type>rotate</type>
     <object-name>ailetteD1</object-name>
     <object-name>intailetteD1</object-name>
-    <property>/velocities/airspeed-kt</property>
+    <property>velocities/airspeed-kt</property>
     <interpolation>
       <entry><ind>   0 </ind><dep> -30 </dep></entry>
       <entry><ind>  70 </ind><dep> -25 </dep></entry>
@@ -1200,7 +1200,7 @@
     <type>rotate</type>
     <object-name>ailetteD2</object-name>
     <object-name>intailetteD2</object-name>
-    <property>/velocities/airspeed-kt</property>
+    <property>velocities/airspeed-kt</property>
     <interpolation>
       <entry><ind>   0 </ind><dep> -30 </dep></entry>
       <entry><ind>  70 </ind><dep> -25 </dep></entry>

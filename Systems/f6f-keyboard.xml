@@ -93,4 +93,17 @@
     </binding>
   </key>
 
+  <key n="115">
+    <name>s</name>
+    <mod-alt>
+      <desc>Toggle supercharger speed</desc>
+      <binding>
+        <command>property-cycle</command>
+        <property>controls/engines/engine/boost</property>
+        <value>0.7</value> <!-- low speed -->
+        <value>1.0</value> <!-- high speed -->
+      </binding>
+    </mod-alt>
+  </key>
+
 </PropertyList>
