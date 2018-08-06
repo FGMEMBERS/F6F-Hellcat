@@ -14,7 +14,29 @@
 
     <description>GRUMANN F6F Hellcat (YASim)</description>
     <author>Emmanuel BARANGER (3D/FDM), FGUK (FDM),  Brent HUGH (Ammo re-load, Bombable compatibility)</author>
-    <status>devel</status>
+    <status>beta</status>
+    <rating>
+      <FDM type="int">     3 </FDM>
+      <systems type="int"> 2 </systems>
+      <cockpit type="int"> 2 </cockpit>
+      <model type="int">   4 </model>
+    </rating>
+    <tags>
+      <tag>fighter</tag>
+      <tag>grummann</tag>
+      <tag>1940s</tag>
+      <tag>ww2</tag>
+      <tag>castering-wheel</tag>
+      <tag>retractable-gear</tag>
+      <tag>tail-dragger</tag>
+      <tag>tail-hook</tag>
+      <tag>wing-fold</tag>
+      <tag>propeller</tag>
+      <tag>piston</tag>
+      <tag>single-engine</tag>
+      <tag>supercharged</tag>
+      <tag>variable-pitch</tag>
+    </tags>
 
     <fuel-fraction>1.0</fuel-fraction>
     <allow-toggle-cockpit type="bool">true</allow-toggle-cockpit>
