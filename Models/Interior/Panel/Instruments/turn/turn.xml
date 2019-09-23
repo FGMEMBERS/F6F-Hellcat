@@ -26,7 +26,7 @@
     <object-name>needle</object-name>
     <object-name>fond2</object-name>
     <emission>
-      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
       <red>   0.50 </red>
       <green> 0.25 </green>
       <blue>  0.25 </blue>
@@ -36,7 +36,7 @@
   <animation>
     <type>rotate</type>
     <object-name>needle</object-name>
-    <property>/instrumentation/turn-indicator/indicated-turn-rate</property>
+    <property>instrumentation/turn-indicator/indicated-turn-rate</property>
     <factor> 20 </factor>
     <axis>
       <x> -1 </x>
@@ -48,7 +48,7 @@
   <animation>
     <type>rotate</type>
     <object-name>ball</object-name>
-    <property>/instrumentation/slip-skid-ball/indicated-slip-skid</property>
+    <property>instrumentation/slip-skid-ball/indicated-slip-skid</property>
     <factor> 21 </factor>
     <min-deg> -19 </min-deg>
     <max-deg>  19 </max-deg>

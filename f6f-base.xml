@@ -2,13 +2,45 @@
 
 <PropertyList>
 
+  <controls>
+    <engines>
+      <engine n="0">
+        <boost type="double">0.7</boost>
+      </engine>
+    </engines>
+  </controls>
+
   <sim include="Systems/views.xml">
 
     <description>GRUMANN F6F Hellcat (YASim)</description>
     <author>Emmanuel BARANGER (3D/FDM), FGUK (FDM),  Brent HUGH (Ammo re-load, Bombable compatibility)</author>
-    <status>devel</status>
+    <status>beta</status>
+    <rating>
+      <FDM type="int">     3 </FDM>
+      <systems type="int"> 2 </systems>
+      <cockpit type="int"> 2 </cockpit>
+      <model type="int">   4 </model>
+    </rating>
+    <tags>
+      <tag>fighter</tag>
+      <tag>grummann</tag>
+      <tag>1940s</tag>
+      <tag>ww2</tag>
+      <tag>castering-wheel</tag>
+      <tag>retractable-gear</tag>
+      <tag>tail-dragger</tag>
+      <tag>tail-hook</tag>
+      <tag>wing-fold</tag>
+      <tag>propeller</tag>
+      <tag>piston</tag>
+      <tag>radial</tag>
+      <tag>single-engine</tag>
+      <tag>supercharged</tag>
+      <tag>variable-pitch</tag>
+    </tags>
 
     <fuel-fraction>1.0</fuel-fraction>
+    <allow-toggle-cockpit type="bool">true</allow-toggle-cockpit>
 
     <sound>
       <audible>true</audible>
@@ -72,13 +104,6 @@
   <surface-positions>
     <wing-fold-pos-norm alias="/sim/model/door-positions/passenger/position-norm"/>
   </surface-positions>
-
-  <engines>
-    <engine n="0">
-      <engine-num type="int">0</engine-num>
-      <running>true</running>
-    </engine>
-  </engines>
 
   <consumables>
     <fuel>

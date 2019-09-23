@@ -21,18 +21,20 @@
 
 <airplane mass="9238" version="YASIM_VERSION_CURRENT">
 
-  <approach speed="75" aoa="4">
-    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.2"/>
+  <approach speed="95" aoa="0">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.1"/>
     <control-setting axis="/controls/engines/engine[0]/mixture" value="1"/>
     <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1"/>
+    <control-setting axis="/controls/engines/engine[0]/boost" value="0.7"/>
     <control-setting axis="/controls/flight/flaps" value="1"/>
     <control-setting axis="/controls/gear/gear-down" value="1"/>
   </approach>
 
-  <cruise speed="297" alt="5000">
+  <cruise speed="300" alt="25500">
     <control-setting axis="/controls/engines/engine[0]/throttle" value="1"/>
     <control-setting axis="/controls/engines/engine[0]/mixture" value="0.7"/>
-    <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.4"/>
+    <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="0.20"/>
+    <control-setting axis="/controls/engines/engine[0]/boost" value="1.0"/>
     <control-setting axis="/controls/flight/flaps" value="0"/>
     <control-setting axis="/controls/gear/gear-down" value="0"/>
   </cruise>
@@ -104,25 +106,31 @@
   -->
   <propeller x="4" y="0" z="0.105"
              radius="2" 
-             mass="1900"
+             mass="2074"
              moment="105.5"
-             cruise-alt="2000"
-             cruise-power="1095"
-             cruise-speed="190"
-             cruise-rpm="1037"
+             cruise-alt="25500"
+             cruise-power="320"
+             cruise-speed="150"
+             cruise-rpm="886"
              gear-ratio="0.479"
              min-rpm="766"
-             max-rpm="1637" >
+             max-rpm="1293"
+             takeoff-power="2000"
+             takeoff-rpm="1293">
              <actionpt x="4.704" y="0" z="0.105"/>
              <control-input axis="/controls/engines/engine[0]/propeller-pitch" control="ADVANCE" />
-             <piston-engine eng-power="2100"
-                            eng-rpm="2800"
+             <piston-engine eng-power="2000"
+                            eng-rpm="2700"
+                            displacement="2804.5"
+                            compression="6.65"
                             turbo-mul="4.3"
+                            supercharger="1"
                             wastegate-mp="56">
                             <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
                             <control-input axis="/controls/engines/engine[0]/starter" control="STARTER"/>
                             <control-input axis="/controls/engines/engine[0]/magnetos" control="MAGNETOS"/>
                             <control-input axis="/controls/engines/engine[0]/mixture" control="MIXTURE"/>
+                            <control-input axis="/controls/engines/engine[0]/boost" control="BOOST"/>
              </piston-engine>
   </propeller>
 
